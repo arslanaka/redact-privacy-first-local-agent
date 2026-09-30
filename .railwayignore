@@ -1,0 +1,9 @@
+# Keep uploads small: build outputs and media are not needed to build the images.
+brag-output/
+**/node_modules/
+**/.next/
+**/target/
+**/.venv/
+**/.pytest_cache/
+.env
+.env.railway.local

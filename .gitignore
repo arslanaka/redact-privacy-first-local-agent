@@ -1,0 +1,29 @@
+# Secrets and local config
+.env
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
+*.iml
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Java
+backend/target/
+backend/data/
+
+# Node
+frontend/node_modules/
+frontend/.next/
+frontend/public/samples/
+
+# Local deployment secrets
+.env.railway.local
+
+# Video production workspace (the final demo lives in docs/media/)
+brag-output/

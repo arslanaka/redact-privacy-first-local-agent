@@ -1,0 +1,10 @@
+Local Privacy Agent - AI Service
+
+app/classifiers/laya_candidates.py contains code copied from
+goku-san/laya-experts, demo/pii_demo.py
+https://huggingface.co/goku-san/laya-experts
+Licensed under the Apache License, Version 2.0.
+
+The Laya PII model weights (goku-san/laya-experts, subfolder "pii") are downloaded at runtime and
+are licensed under Apache-2.0. The base model is convaiinnovations/laya (Apache-2.0).
+Model training data: ai4privacy OpenPII (CC-BY-4.0).

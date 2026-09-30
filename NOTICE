@@ -1,0 +1,16 @@
+Local Privacy Agent
+Copyright 2026 Muhammad Arslan
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+It includes third-party code and downloads third-party model weights at runtime:
+
+- ai-service/app/classifiers/laya_candidates.py is copied from goku-san/laya-experts
+  (demo/pii_demo.py), https://huggingface.co/goku-san/laya-experts, Apache License 2.0.
+  See ai-service/NOTICE.
+- The Laya PII model weights (goku-san/laya-experts, subfolder "pii", Apache-2.0) and the base
+  model convaiinnovations/laya (Apache-2.0) are downloaded at runtime and are not part of this
+  repository. The model was trained on ai4privacy OpenPII (CC-BY-4.0).
+
+All sample and evaluation documents in samples/ and evaluation/dataset/ are synthetic and
+contain no real personal data.

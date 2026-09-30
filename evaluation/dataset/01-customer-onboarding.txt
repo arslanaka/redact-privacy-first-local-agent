@@ -1,0 +1,10 @@
+Customer onboarding form - Northwind Mobility GmbH
+
+Full name: [[PERSON|Katharina Vogel]]
+Date of birth: [[DATE_OF_BIRTH|17.04.1988]]
+Email: [[EMAIL|k.vogel@example.de]]
+Mobile: [[PHONE|+49 170 5550 1234]]
+Address: [[ADDRESS|Bergmannstrasse 12, 10961 Berlin]]
+Direct debit IBAN: [[IBAN|DE89 3704 0044 0532 0130 00]]
+
+Onboarding completed on 03/02/2025 by our Berlin sales team.

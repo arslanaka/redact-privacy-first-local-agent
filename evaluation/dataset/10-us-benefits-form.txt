@@ -1,0 +1,9 @@
+Benefits enrollment form
+
+Employee: [[PERSON|Jessica Morgan]]
+SSN: [[ID_NUMBER|078-05-1120]]
+Date of birth: [[DATE_OF_BIRTH|03/15/1985]]
+Home address: [[ADDRESS|1420 Maple Avenue, Springfield, IL 62704]]
+Phone: [[PHONE|(555) 014-2233]]
+Dependent: [[PERSON|Ethan Morgan]], born [[DATE_OF_BIRTH|07/22/2016]]
+Plan selected: Silver PPO, effective January 1.

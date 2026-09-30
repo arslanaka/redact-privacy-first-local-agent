@@ -1,0 +1,11 @@
+**/node_modules
+**/.next
+**/.venv
+**/target
+**/__pycache__
+**/.pytest_cache
+backend
+ai-service
+evaluation
+docs
+.git

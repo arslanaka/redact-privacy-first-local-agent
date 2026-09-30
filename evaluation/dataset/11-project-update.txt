@@ -1,0 +1,7 @@
+Project update - Q3
+
+The migration to the new data platform is on track. The Frankfurt and Dublin regions went live in
+August; Singapore follows in October. Latency dropped by 38 percent after the cache change.
+
+Risks: vendor contract renewal with Oracle is still open, and the Berlin team is understaffed.
+Next steering meeting: 14 October 2025, 10:00 CET.

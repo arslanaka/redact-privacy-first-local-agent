@@ -1,0 +1,78 @@
+name: local-privacy-agent
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-privacy_agent}
+      POSTGRES_USER: ${POSTGRES_USER:-privacy_agent}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-privacy_agent}
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  ai-service:
+    build: ./ai-service
+    environment:
+      PII_CLASSIFIER: ${PII_CLASSIFIER:-laya}
+      LAYA_THRESHOLD: ${LAYA_THRESHOLD:-0.5}
+      LAYA_REGION: ${LAYA_REGION:-US}
+      LAYA_TORCH_THREADS: ${LAYA_TORCH_THREADS:-}
+      LAYA_DEVICE: cpu
+    volumes:
+      # Model weights are downloaded once (~850 MB) and cached here across restarts.
+      - model-cache:/models
+    ports:
+      - "8000:8000"
+
+  backend:
+    build: ./backend
+    restart: on-failure
+    depends_on:
+      postgres:
+        condition: service_healthy
+      ai-service:
+        condition: service_started
+    environment:
+      DATABASE_URL: jdbc:postgresql://postgres:5432/${POSTGRES_DB:-privacy_agent}
+      DATABASE_USER: ${POSTGRES_USER:-privacy_agent}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD:-privacy_agent}
+      # Override to use an AI service running natively on the host (faster on Apple silicon):
+      # AI_SERVICE_URL=http://host.docker.internal:8000
+      AI_SERVICE_URL: ${AI_SERVICE_URL:-http://ai-service:8000}
+      PRIVACY_DOCUMENT_RETENTION_HOURS: ${PRIVACY_DOCUMENT_RETENTION_HOURS:-24}
+      PRIVACY_REDACTION_STYLE: ${PRIVACY_REDACTION_STYLE:-BLOCK}
+      PRIVACY_EVALUATION_ENABLED: ${PRIVACY_EVALUATION_ENABLED:-true}
+      CORS_ALLOWED_ORIGINS: http://localhost:3000
+      # Optional locally; required on a hosted deployment (see README, "Private deployment").
+      INTERNAL_API_TOKEN: ${INTERNAL_API_TOKEN:-}
+    volumes:
+      - document-data:/data/documents
+    ports:
+      - "8080:8080"
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    depends_on:
+      - backend
+    environment:
+      # The browser only talks to the frontend; it forwards /api/* to the backend.
+      BACKEND_URL: http://backend:8080
+      INTERNAL_API_TOKEN: ${INTERNAL_API_TOKEN:-}
+      # Local default: no sign-in. Set AUTH_DISABLED=false plus APP_USERS and SESSION_SECRET to try it.
+      AUTH_DISABLED: ${AUTH_DISABLED:-true}
+      APP_USERS: ${APP_USERS:-}
+      SESSION_SECRET: ${SESSION_SECRET:-}
+    ports:
+      - "3000:3000"
+
+volumes:
+  postgres-data:
+  document-data:
+  model-cache:

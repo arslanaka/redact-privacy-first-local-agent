@@ -1,0 +1,6 @@
+Security incident report INC-7731
+
+On 14 February 2025 at 22:40 an unknown device attempted repeated logins to the VPN gateway.
+The affected account belongs to [[PERSON|Priya Raman]] ([[EMAIL|p.raman@example.com]]).
+The on-call engineer, [[PERSON|Oliver Grant]], blocked the source range and rotated the credentials.
+No customer data was accessed. Follow-up review is scheduled with the London security team.

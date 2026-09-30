@@ -1,0 +1,13 @@
+Riverbank Medical Practice
+
+Re: [[PERSON|Harriet Lowe]], born [[DATE_OF_BIRTH|22 June 1974]]
+NHS number: [[ID_NUMBER|943 476 5919]]
+Home address: [[ADDRESS|9 Orchard Lane, Oxford OX2 6HT]]
+
+Dear [[PERSON|Dr Patel]],
+
+Thank you for seeing this patient. She reports recurring headaches since January. Please contact
+her on [[PHONE|01865 555 019]] or at [[EMAIL|harriet.lowe@example.net]] to arrange a follow-up.
+
+Kind regards,
+[[PERSON|Dr Susan Reid]]

@@ -1,0 +1,7 @@
+Payment dispute - case 44310
+
+Cardholder [[PERSON|Robert Klein]] disputes a charge of 249.99 EUR from 2 April 2025.
+Card number: [[CREDIT_CARD|5555-5555-5555-4444]]
+Refund account: [[IBAN|FR14 2004 1010 0505 0001 3M02 606]]
+Contact: [[EMAIL|robert.klein@example.fr]], [[PHONE|+33 6 55 50 12 34]]
+The merchant, Galeries Nord, has 10 days to respond.

@@ -1,0 +1,19 @@
+INVOICE INV-2025-0042
+
+From: Nordlicht Software GmbH, Friedrichstrasse 118, 10117 Berlin
+To:   Harbor & Pine Consulting Ltd, 88 Wharf Street, Leeds LS1 4DQ
+
+Invoice date: 03/02/2025
+Due date:     05/03/2025
+
+Description                              Qty    Unit price    Total
+Privacy review workshop                    2      1,200.00    2,400.00
+Data mapping support (hours)              14        95.00     1,330.00
+
+Subtotal: 3,730.00 EUR
+VAT 19%:    708.70 EUR
+Total:    4,438.70 EUR
+
+Please transfer the amount to IBAN GB29 NWBK 6016 1331 9268 19.
+Questions: accounts@example.com, reference INV-2025-0042.
+Contact person: Daniel Okafor, +44 113 496 0321.

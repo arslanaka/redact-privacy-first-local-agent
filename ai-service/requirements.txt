@@ -1,0 +1,8 @@
+# Runtime dependencies for the Docker image (torch is installed separately from the CPU wheel index).
+# Kept in sync with pyproject.toml / uv.lock.
+fastapi==0.141.1
+uvicorn[standard]==0.54.0
+pydantic==2.13.5
+pydantic-settings==2.15.0
+laya==0.3.21
+numpy==2.5.3

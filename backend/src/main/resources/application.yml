@@ -1,0 +1,85 @@
+spring:
+  application:
+    name: local-privacy-agent-backend
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/privacy_agent}
+    username: ${DATABASE_USER:privacy_agent}
+    password: ${DATABASE_PASSWORD:privacy_agent}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        jdbc.time_zone: UTC
+  flyway:
+    enabled: true
+  servlet:
+    multipart:
+      # Slightly above the validated 10 MB so the validator (not the container) produces the error message.
+      max-file-size: 11MB
+      max-request-size: 11MB
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: ${SERVER_PORT:8080}
+  error:
+    include-stacktrace: never
+
+privacy:
+  storage:
+    directory: ${PRIVACY_STORAGE_DIR:./data/documents}
+  upload:
+    max-file-size: ${PRIVACY_MAX_FILE_SIZE:10MB}
+  retention:
+    document-hours: ${PRIVACY_DOCUMENT_RETENTION_HOURS:24}
+    cleanup-interval: ${PRIVACY_RETENTION_CLEANUP_INTERVAL:PT15M}
+  ai-service:
+    base-url: ${AI_SERVICE_URL:http://localhost:8000}
+    connect-timeout: 3s
+    # CPU inference on long documents can take a while; the analysis runs asynchronously.
+    read-timeout: ${AI_SERVICE_READ_TIMEOUT:10m}
+  redaction:
+    style: ${PRIVACY_REDACTION_STYLE:BLOCK}
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:3000}
+  evaluation-enabled: ${PRIVACY_EVALUATION_ENABLED:true}
+  deployment:
+    # Only for the UI's time/cost estimates. Defaults: Railway usage pricing ($20/vCPU/month, $10/GB/month).
+    host: ${PRIVACY_COST_HOST:Railway}
+    vcpu-usd-per-second: ${PRIVACY_COST_VCPU_USD_PER_SECOND:0.00000772}
+    memory-gb-usd-per-second: ${PRIVACY_COST_MEMORY_GB_USD_PER_SECOND:0.00000386}
+    model-memory-gb: ${PRIVACY_COST_MODEL_MEMORY_GB:3.2}
+    other-services-memory-gb: ${PRIVACY_COST_OTHER_MEMORY_GB:0.8}
+  security:
+    # Shared secret the frontend proxy must send (X-Internal-Token). Blank = no check (local only).
+    internal-token: ${INTERNAL_API_TOKEN:}
+    require-internal-token: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+logging:
+  pattern:
+    # Structured key=value context on every line: request id, document id and workflow stage.
+    console: "%d{HH:mm:ss.SSS} %5p [%thread] [requestId=%X{requestId:-}] [documentId=%X{documentId:-}] [stage=%X{stage:-}] %logger{36} - %m%n"
+  level:
+    org.apache.pdfbox: WARN
+    org.apache.fontbox: WARN

@@ -1,0 +1,4052 @@
+{
+  "generatedAt": "2026-09-28T20:46:12+00:00",
+  "environment": {
+    "backend": "http://localhost:8080",
+    "host": "Darwin arm64",
+    "python": "3.9.6"
+  },
+  "model": {
+    "name": "laya",
+    "isMock": false
+  },
+  "dataset": {
+    "documents": 14,
+    "goldEntities": 62,
+    "characters": 4637
+  },
+  "summary": {
+    "REGEX": {
+      "precision": 1.0,
+      "recall": 0.4032,
+      "f1": 0.5747,
+      "typed_precision": 0.96,
+      "typed_recall": 0.3871,
+      "typed_f1": 0.5517,
+      "true_positives": 25,
+      "false_positives": 0,
+      "false_negatives": 37,
+      "predictions": 25,
+      "gold_entities": 62,
+      "pii_char_coverage": 0.4775,
+      "extra_chars_redacted": 0,
+      "avg_latency_ms": 0.6,
+      "p50_latency_ms": 0.0,
+      "max_latency_ms": 4,
+      "per_type_recall": {
+        "ADDRESS": {
+          "gold": 5,
+          "found": 0,
+          "recall": 0.0
+        },
+        "CREDIT_CARD": {
+          "gold": 2,
+          "found": 2,
+          "recall": 1.0
+        },
+        "DATE_OF_BIRTH": {
+          "gold": 5,
+          "found": 0,
+          "recall": 0.0
+        },
+        "EMAIL": {
+          "gold": 9,
+          "found": 9,
+          "recall": 1.0
+        },
+        "IBAN": {
+          "gold": 4,
+          "found": 4,
+          "recall": 1.0
+        },
+        "ID_NUMBER": {
+          "gold": 5,
+          "found": 0,
+          "recall": 0.0
+        },
+        "PERSON": {
+          "gold": 22,
+          "found": 0,
+          "recall": 0.0
+        },
+        "PHONE": {
+          "gold": 10,
+          "found": 10,
+          "recall": 1.0
+        }
+      },
+      "false_positive_examples": [],
+      "false_negative_examples": [
+        {
+          "text": "Katharina Vogel",
+          "type": "PERSON",
+          "doc": "01-customer-onboarding.txt"
+        },
+        {
+          "text": "17.04.1988",
+          "type": "DATE_OF_BIRTH",
+          "doc": "01-customer-onboarding.txt"
+        },
+        {
+          "text": "Bergmannstrasse 12, 10961 Berlin",
+          "type": "ADDRESS",
+          "doc": "01-customer-onboarding.txt"
+        },
+        {
+          "text": "Daniel Okafor",
+          "type": "PERSON",
+          "doc": "02-support-email.txt"
+        },
+        {
+          "text": "4 Canal Street, Manchester M1 3HE",
+          "type": "ADDRESS",
+          "doc": "02-support-email.txt"
+        },
+        {
+          "text": "Daniel",
+          "type": "PERSON",
+          "doc": "02-support-email.txt"
+        },
+        {
+          "text": "Sofia Martens",
+          "type": "PERSON",
+          "doc": "03-hr-note.txt"
+        },
+        {
+          "text": "65 929 970 489",
+          "type": "ID_NUMBER",
+          "doc": "03-hr-note.txt"
+        },
+        {
+          "text": "C01X00T47",
+          "type": "ID_NUMBER",
+          "doc": "03-hr-note.txt"
+        },
+        {
+          "text": "Thomas Brandt",
+          "type": "PERSON",
+          "doc": "03-hr-note.txt"
+        },
+        {
+          "text": "Nino Beridze",
+          "type": "PERSON",
+          "doc": "04-ambiguous-meeting.txt"
+        },
+        {
+          "text": "Mark Chen",
+          "type": "PERSON",
+          "doc": "04-ambiguous-meeting.txt"
+        },
+        {
+          "text": "Harriet Lowe",
+          "type": "PERSON",
+          "doc": "05-medical-letter.txt"
+        },
+        {
+          "text": "22 June 1974",
+          "type": "DATE_OF_BIRTH",
+          "doc": "05-medical-letter.txt"
+        },
+        {
+          "text": "943 476 5919",
+          "type": "ID_NUMBER",
+          "doc": "05-medical-letter.txt"
+        },
+        {
+          "text": "9 Orchard Lane, Oxford OX2 6HT",
+          "type": "ADDRESS",
+          "doc": "05-medical-letter.txt"
+        },
+        {
+          "text": "Dr Patel",
+          "type": "PERSON",
+          "doc": "05-medical-letter.txt"
+        },
+        {
+          "text": "Dr Susan Reid",
+          "type": "PERSON",
+          "doc": "05-medical-letter.txt"
+        },
+        {
+          "text": "Mateo Alvarez Ruiz",
+          "type": "PERSON",
+          "doc": "08-rental-application.txt"
+        },
+        {
+          "text": "1992-09-30",
+          "type": "DATE_OF_BIRTH",
+          "doc": "08-rental-application.txt"
+        },
+        {
+          "text": "Calle de Alcala 45, 28014 Madrid",
+          "type": "ADDRESS",
+          "doc": "08-rental-application.txt"
+        },
+        {
+          "text": "Lucia Moreno",
+          "type": "PERSON",
+          "doc": "08-rental-application.txt"
+        },
+        {
+          "text": "Priya Raman",
+          "type": "PERSON",
+          "doc": "09-incident-report.txt"
+        },
+        {
+          "text": "Oliver Grant",
+          "type": "PERSON",
+          "doc": "09-incident-report.txt"
+        },
+        {
+          "text": "Jessica Morgan",
+          "type": "PERSON",
+          "doc": "10-us-benefits-form.txt"
+        },
+        {
+          "text": "078-05-1120",
+          "type": "ID_NUMBER",
+          "doc": "10-us-benefits-form.txt"
+        },
+        {
+          "text": "03/15/1985",
+          "type": "DATE_OF_BIRTH",
+          "doc": "10-us-benefits-form.txt"
+        },
+        {
+          "text": "1420 Maple Avenue, Springfield, IL 62704",
+          "type": "ADDRESS",
+          "doc": "10-us-benefits-form.txt"
+        },
+        {
+          "text": "Ethan Morgan",
+          "type": "PERSON",
+          "doc": "10-us-benefits-form.txt"
+        },
+        {
+          "text": "07/22/2016",
+          "type": "DATE_OF_BIRTH",
+          "doc": "10-us-benefits-form.txt"
+        },
+        {
+          "text": "Amelia Hartley",
+          "type": "PERSON",
+          "doc": "12-reference-letter.txt"
+        },
+        {
+          "text": "Amelia",
+          "type": "PERSON",
+          "doc": "12-reference-letter.txt"
+        },
+        {
+          "text": "James Whitfield",
+          "type": "PERSON",
+          "doc": "12-reference-letter.txt"
+        },
+        {
+          "text": "Robert Klein",
+          "type": "PERSON",
+          "doc": "13-payment-dispute.txt"
+        },
+        {
+          "text": "Aisha Rahman",
+          "type": "PERSON",
+          "doc": "14-driver-record.txt"
+        },
+        {
+          "text": "RAHMA805236A99BJ",
+          "type": "ID_NUMBER",
+          "doc": "14-driver-record.txt"
+        },
+        {
+          "text": "Imran Rahman",
+          "type": "PERSON",
+          "doc": "14-driver-record.txt"
+        }
+      ]
+    },
+    "MODEL": {
+      "precision": 0.7326,
+      "recall": 0.9839,
+      "f1": 0.8398,
+      "typed_precision": 0.6512,
+      "typed_recall": 0.8871,
+      "typed_f1": 0.751,
+      "true_positives": 61,
+      "false_positives": 23,
+      "false_negatives": 1,
+      "predictions": 86,
+      "gold_entities": 62,
+      "pii_char_coverage": 0.9368,
+      "extra_chars_redacted": 211,
+      "avg_latency_ms": 18929.3,
+      "p50_latency_ms": 17586.5,
+      "max_latency_ms": 34184,
+      "per_type_recall": {
+        "ADDRESS": {
+          "gold": 5,
+          "found": 5,
+          "recall": 1.0
+        },
+        "CREDIT_CARD": {
+          "gold": 2,
+          "found": 2,
+          "recall": 1.0
+        },
+        "DATE_OF_BIRTH": {
+          "gold": 5,
+          "found": 5,
+          "recall": 1.0
+        },
+        "EMAIL": {
+          "gold": 9,
+          "found": 8,
+          "recall": 0.8889
+        },
+        "IBAN": {
+          "gold": 4,
+          "found": 4,
+          "recall": 1.0
+        },
+        "ID_NUMBER": {
+          "gold": 5,
+          "found": 5,
+          "recall": 1.0
+        },
+        "PERSON": {
+          "gold": 22,
+          "found": 22,
+          "recall": 1.0
+        },
+        "PHONE": {
+          "gold": 10,
+          "found": 10,
+          "recall": 1.0
+        }
+      },
+      "false_positive_examples": [
+        {
+          "text": "03/02/2025",
+          "type": "OTHER",
+          "doc": "01-customer-onboarding.txt"
+        },
+        {
+          "text": "58214",
+          "type": "ADDRESS",
+          "doc": "02-support-email.txt"
+        },
+        {
+          "text": "Hamburg",
+          "type": "LOCATION",
+          "doc": "03-hr-note.txt"
+        },
+        {
+          "text": "1 March 2021",
+          "type": "OTHER",
+          "doc": "03-hr-note.txt"
+        },
+        {
+          "text": "Victoria",
+          "type": "LOCATION",
+          "doc": "04-ambiguous-meeting.txt"
+        },
+        {
+          "text": "January",
+          "type": "OTHER",
+          "doc": "05-medical-letter.txt"
+        },
+        {
+          "text": "21 Dock Road, Liverpool L3 4AF",
+          "type": "ADDRESS",
+          "doc": "06-invoice.txt"
+        },
+        {
+          "text": "Cedar",
+          "type": "PERSON",
+          "doc": "06-invoice.txt"
+        },
+        {
+          "text": "12/03/2025",
+          "type": "OTHER",
+          "doc": "06-invoice.txt"
+        },
+        {
+          "text": "11/04/2025",
+          "type": "OTHER",
+          "doc": "06-invoice.txt"
+        },
+        {
+          "text": "Iberia",
+          "type": "PERSON",
+          "doc": "08-rental-application.txt"
+        },
+        {
+          "text": "INC-7731",
+          "type": "ID_NUMBER",
+          "doc": "09-incident-report.txt"
+        },
+        {
+          "text": "14 February 2025",
+          "type": "OTHER",
+          "doc": "09-incident-report.txt"
+        },
+        {
+          "text": "Frankfurt",
+          "type": "LOCATION",
+          "doc": "11-project-update.txt"
+        },
+        {
+          "text": "Berlin",
+          "type": "LOCATION",
+          "doc": "11-project-update.txt"
+        },
+        {
+          "text": "October 2025",
+          "type": "OTHER",
+          "doc": "11-project-update.txt"
+        },
+        {
+          "text": "2019",
+          "type": "OTHER",
+          "doc": "12-reference-letter.txt"
+        },
+        {
+          "text": "44310",
+          "type": "ADDRESS",
+          "doc": "13-payment-dispute.txt"
+        },
+        {
+          "text": "2 April 2025",
+          "type": "OTHER",
+          "doc": "13-payment-dispute.txt"
+        },
+        {
+          "text": "Galeries Nord",
+          "type": "LOCATION",
+          "doc": "13-payment-dispute.txt"
+        },
+        {
+          "text": "2031",
+          "type": "OTHER",
+          "doc": "14-driver-record.txt"
+        },
+        {
+          "text": "12",
+          "type": "ADDRESS",
+          "doc": "14-driver-record.txt"
+        },
+        {
+          "text": "Leeds",
+          "type": "LOCATION",
+          "doc": "14-driver-record.txt"
+        }
+      ],
+      "false_negative_examples": [
+        {
+          "text": "billing@example.org",
+          "type": "EMAIL",
+          "doc": "06-invoice.txt"
+        }
+      ]
+    },
+    "HYBRID": {
+      "precision": 0.7326,
+      "recall": 1.0,
+      "f1": 0.8456,
+      "typed_precision": 0.7209,
+      "typed_recall": 0.9839,
+      "typed_f1": 0.8321,
+      "true_positives": 62,
+      "false_positives": 23,
+      "false_negatives": 0,
+      "predictions": 86,
+      "gold_entities": 62,
+      "pii_char_coverage": 0.9895,
+      "extra_chars_redacted": 206,
+      "avg_latency_ms": 19054.3,
+      "p50_latency_ms": 17439.5,
+      "max_latency_ms": 34026,
+      "per_type_recall": {
+        "ADDRESS": {
+          "gold": 5,
+          "found": 5,
+          "recall": 1.0
+        },
+        "CREDIT_CARD": {
+          "gold": 2,
+          "found": 2,
+          "recall": 1.0
+        },
+        "DATE_OF_BIRTH": {
+          "gold": 5,
+          "found": 5,
+          "recall": 1.0
+        },
+        "EMAIL": {
+          "gold": 9,
+          "found": 9,
+          "recall": 1.0
+        },
+        "IBAN": {
+          "gold": 4,
+          "found": 4,
+          "recall": 1.0
+        },
+        "ID_NUMBER": {
+          "gold": 5,
+          "found": 5,
+          "recall": 1.0
+        },
+        "PERSON": {
+          "gold": 22,
+          "found": 22,
+          "recall": 1.0
+        },
+        "PHONE": {
+          "gold": 10,
+          "found": 10,
+          "recall": 1.0
+        }
+      },
+      "false_positive_examples": [
+        {
+          "text": "03/02/2025",
+          "type": "OTHER",
+          "doc": "01-customer-onboarding.txt"
+        },
+        {
+          "text": "58214",
+          "type": "ADDRESS",
+          "doc": "02-support-email.txt"
+        },
+        {
+          "text": "Hamburg",
+          "type": "LOCATION",
+          "doc": "03-hr-note.txt"
+        },
+        {
+          "text": "1 March 2021",
+          "type": "OTHER",
+          "doc": "03-hr-note.txt"
+        },
+        {
+          "text": "Victoria",
+          "type": "LOCATION",
+          "doc": "04-ambiguous-meeting.txt"
+        },
+        {
+          "text": "January",
+          "type": "OTHER",
+          "doc": "05-medical-letter.txt"
+        },
+        {
+          "text": "21 Dock Road, Liverpool L3 4AF",
+          "type": "ADDRESS",
+          "doc": "06-invoice.txt"
+        },
+        {
+          "text": "Cedar",
+          "type": "PERSON",
+          "doc": "06-invoice.txt"
+        },
+        {
+          "text": "12/03/2025",
+          "type": "OTHER",
+          "doc": "06-invoice.txt"
+        },
+        {
+          "text": "11/04/2025",
+          "type": "OTHER",
+          "doc": "06-invoice.txt"
+        },
+        {
+          "text": "Iberia",
+          "type": "PERSON",
+          "doc": "08-rental-application.txt"
+        },
+        {
+          "text": "INC-7731",
+          "type": "ID_NUMBER",
+          "doc": "09-incident-report.txt"
+        },
+        {
+          "text": "14 February 2025",
+          "type": "OTHER",
+          "doc": "09-incident-report.txt"
+        },
+        {
+          "text": "Frankfurt",
+          "type": "LOCATION",
+          "doc": "11-project-update.txt"
+        },
+        {
+          "text": "Berlin",
+          "type": "LOCATION",
+          "doc": "11-project-update.txt"
+        },
+        {
+          "text": "October 2025",
+          "type": "OTHER",
+          "doc": "11-project-update.txt"
+        },
+        {
+          "text": "2019",
+          "type": "OTHER",
+          "doc": "12-reference-letter.txt"
+        },
+        {
+          "text": "44310",
+          "type": "ADDRESS",
+          "doc": "13-payment-dispute.txt"
+        },
+        {
+          "text": "2 April 2025",
+          "type": "OTHER",
+          "doc": "13-payment-dispute.txt"
+        },
+        {
+          "text": "Galeries Nord",
+          "type": "LOCATION",
+          "doc": "13-payment-dispute.txt"
+        },
+        {
+          "text": "2031",
+          "type": "OTHER",
+          "doc": "14-driver-record.txt"
+        },
+        {
+          "text": "12",
+          "type": "ADDRESS",
+          "doc": "14-driver-record.txt"
+        },
+        {
+          "text": "Leeds",
+          "type": "LOCATION",
+          "doc": "14-driver-record.txt"
+        }
+      ],
+      "false_negative_examples": []
+    }
+  },
+  "documents": [
+    {
+      "document": "01-customer-onboarding.txt",
+      "characters": 308,
+      "gold": 6,
+      "methods": {
+        "REGEX": {
+          "durationMs": 4,
+          "wallMs": 42,
+          "entities": [
+            {
+              "text": "k.vogel@example.de",
+              "type": "EMAIL",
+              "confidence": 0.97,
+              "start": 112,
+              "end": 130,
+              "source": "REGEX"
+            },
+            {
+              "text": "49 170 5550 1234",
+              "type": "CREDIT_CARD",
+              "confidence": 0.97,
+              "start": 140,
+              "end": 156,
+              "source": "REGEX"
+            },
+            {
+              "text": "DE89 3704 0044 0532 0130 00",
+              "type": "IBAN",
+              "confidence": 0.99,
+              "start": 218,
+              "end": 245,
+              "source": "REGEX"
+            }
+          ],
+          "score": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 3,
+            "predictions": 3,
+            "gold": 6,
+            "tp_pred": 3,
+            "typed_found": 2,
+            "typed_tp_pred": 2,
+            "gold_chars": 119,
+            "gold_chars_covered": 61,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [
+              {
+                "text": "Katharina Vogel",
+                "type": "PERSON"
+              },
+              {
+                "text": "17.04.1988",
+                "type": "DATE_OF_BIRTH"
+              },
+              {
+                "text": "Bergmannstrasse 12, 10961 Berlin",
+                "type": "ADDRESS"
+              }
+            ],
+            "found_types": [
+              "EMAIL",
+              "PHONE",
+              "IBAN"
+            ],
+            "gold_types": [
+              "PERSON",
+              "DATE_OF_BIRTH",
+              "EMAIL",
+              "PHONE",
+              "ADDRESS",
+              "IBAN"
+            ]
+          }
+        },
+        "MODEL": {
+          "durationMs": 25873,
+          "wallMs": 25884,
+          "entities": [
+            {
+              "text": "Katharina Vogel",
+              "type": "PERSON",
+              "confidence": 0.9994,
+              "start": 63,
+              "end": 78,
+              "source": "LAYA"
+            },
+            {
+              "text": "17.04.1988",
+              "type": "DATE_OF_BIRTH",
+              "confidence": 0.9999,
+              "start": 94,
+              "end": 104,
+              "source": "LAYA"
+            },
+            {
+              "text": "k.vogel@example.de",
+              "type": "EMAIL",
+              "confidence": 0.9996,
+              "start": 112,
+              "end": 130,
+              "source": "LAYA"
+            },
+            {
+              "text": "+49 170 5550 1234",
+              "type": "PHONE",
+              "confidence": 0.9998,
+              "start": 139,
+              "end": 156,
+              "source": "LAYA"
+            },
+            {
+              "text": "Bergmannstrasse 12, 10961 Berlin",
+              "type": "ADDRESS",
+              "confidence": 0.9958,
+              "start": 166,
+              "end": 198,
+              "source": "LAYA"
+            },
+            {
+              "text": "89 3704 0044 0532 0130 00",
+              "type": "ID_NUMBER",
+              "confidence": 0.9996,
+              "start": 220,
+              "end": 245,
+              "source": "LAYA"
+            },
+            {
+              "text": "03/02/2025",
+              "type": "OTHER",
+              "confidence": 0.9998,
+              "start": 271,
+              "end": 281,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 6,
+            "fp": 1,
+            "fn": 0,
+            "predictions": 7,
+            "gold": 6,
+            "tp_pred": 6,
+            "typed_found": 5,
+            "typed_tp_pred": 5,
+            "gold_chars": 119,
+            "gold_chars_covered": 117,
+            "extra_chars": 10,
+            "fp_examples": [
+              {
+                "text": "03/02/2025",
+                "type": "OTHER"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "DATE_OF_BIRTH",
+              "EMAIL",
+              "PHONE",
+              "ADDRESS",
+              "IBAN"
+            ],
+            "gold_types": [
+              "PERSON",
+              "DATE_OF_BIRTH",
+              "EMAIL",
+              "PHONE",
+              "ADDRESS",
+              "IBAN"
+            ]
+          }
+        },
+        "HYBRID": {
+          "durationMs": 26535,
+          "wallMs": 26546,
+          "entities": [
+            {
+              "text": "Katharina Vogel",
+              "type": "PERSON",
+              "confidence": 0.9994,
+              "start": 63,
+              "end": 78,
+              "source": "LAYA"
+            },
+            {
+              "text": "17.04.1988",
+              "type": "DATE_OF_BIRTH",
+              "confidence": 0.9999,
+              "start": 94,
+              "end": 104,
+              "source": "LAYA"
+            },
+            {
+              "text": "k.vogel@example.de",
+              "type": "EMAIL",
+              "confidence": 0.999,
+              "start": 112,
+              "end": 130,
+              "source": "HYBRID"
+            },
+            {
+              "text": "49 170 5550 1234",
+              "type": "CREDIT_CARD",
+              "confidence": 0.97,
+              "start": 140,
+              "end": 156,
+              "source": "HYBRID"
+            },
+            {
+              "text": "Bergmannstrasse 12, 10961 Berlin",
+              "type": "ADDRESS",
+              "confidence": 0.9958,
+              "start": 166,
+              "end": 198,
+              "source": "LAYA"
+            },
+            {
+              "text": "DE89 3704 0044 0532 0130 00",
+              "type": "IBAN",
+              "confidence": 0.99,
+              "start": 218,
+              "end": 245,
+              "source": "HYBRID"
+            },
+            {
+              "text": "03/02/2025",
+              "type": "OTHER",
+              "confidence": 0.9998,
+              "start": 271,
+              "end": 281,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 6,
+            "fp": 1,
+            "fn": 0,
+            "predictions": 7,
+            "gold": 6,
+            "tp_pred": 6,
+            "typed_found": 5,
+            "typed_tp_pred": 5,
+            "gold_chars": 119,
+            "gold_chars_covered": 118,
+            "extra_chars": 10,
+            "fp_examples": [
+              {
+                "text": "03/02/2025",
+                "type": "OTHER"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "DATE_OF_BIRTH",
+              "EMAIL",
+              "PHONE",
+              "ADDRESS",
+              "IBAN"
+            ],
+            "gold_types": [
+              "PERSON",
+              "DATE_OF_BIRTH",
+              "EMAIL",
+              "PHONE",
+              "ADDRESS",
+              "IBAN"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "document": "02-support-email.txt",
+      "characters": 368,
+      "gold": 5,
+      "methods": {
+        "REGEX": {
+          "durationMs": 1,
+          "wallMs": 11,
+          "entities": [
+            {
+              "text": "daniel.okafor@example.com",
+              "type": "EMAIL",
+              "confidence": 0.97,
+              "start": 223,
+              "end": 248,
+              "source": "REGEX"
+            },
+            {
+              "text": "+44 20 7946 0412",
+              "type": "PHONE",
+              "confidence": 0.92,
+              "start": 274,
+              "end": 290,
+              "source": "REGEX"
+            }
+          ],
+          "score": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 3,
+            "predictions": 2,
+            "gold": 5,
+            "tp_pred": 2,
+            "typed_found": 2,
+            "typed_tp_pred": 2,
+            "gold_chars": 93,
+            "gold_chars_covered": 41,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [
+              {
+                "text": "Daniel Okafor",
+                "type": "PERSON"
+              },
+              {
+                "text": "4 Canal Street, Manchester M1 3HE",
+                "type": "ADDRESS"
+              },
+              {
+                "text": "Daniel",
+                "type": "PERSON"
+              }
+            ],
+            "found_types": [
+              "EMAIL",
+              "PHONE"
+            ],
+            "gold_types": [
+              "PERSON",
+              "EMAIL",
+              "PHONE",
+              "ADDRESS",
+              "PERSON"
+            ]
+          }
+        },
+        "MODEL": {
+          "durationMs": 13845,
+          "wallMs": 13850,
+          "entities": [
+            {
+              "text": "58214",
+              "type": "ADDRESS",
+              "confidence": 0.9978,
+              "start": 15,
+              "end": 20,
+              "source": "LAYA"
+            },
+            {
+              "text": "Daniel Okafor",
+              "type": "PERSON",
+              "confidence": 0.9953,
+              "start": 169,
+              "end": 182,
+              "source": "LAYA"
+            },
+            {
+              "text": "daniel.okafor@example.com",
+              "type": "EMAIL",
+              "confidence": 0.9983,
+              "start": 223,
+              "end": 248,
+              "source": "LAYA"
+            },
+            {
+              "text": "+44 20 7946 0412",
+              "type": "PHONE",
+              "confidence": 0.9997,
+              "start": 274,
+              "end": 290,
+              "source": "LAYA"
+            },
+            {
+              "text": "4 Canal Street, Manchester M1 3HE",
+              "type": "ADDRESS",
+              "confidence": 0.9949,
+              "start": 317,
+              "end": 350,
+              "source": "LAYA"
+            },
+            {
+              "text": "Daniel",
+              "type": "PERSON",
+              "confidence": 0.7602,
+              "start": 361,
+              "end": 367,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 5,
+            "fp": 1,
+            "fn": 0,
+            "predictions": 6,
+            "gold": 5,
+            "tp_pred": 5,
+            "typed_found": 5,
+            "typed_tp_pred": 5,
+            "gold_chars": 93,
+            "gold_chars_covered": 93,
+            "extra_chars": 5,
+            "fp_examples": [
+              {
+                "text": "58214",
+                "type": "ADDRESS"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "EMAIL",
+              "PHONE",
+              "ADDRESS",
+              "PERSON"
+            ],
+            "gold_types": [
+              "PERSON",
+              "EMAIL",
+              "PHONE",
+              "ADDRESS",
+              "PERSON"
+            ]
+          }
+        },
+        "HYBRID": {
+          "durationMs": 13815,
+          "wallMs": 13827,
+          "entities": [
+            {
+              "text": "58214",
+              "type": "ADDRESS",
+              "confidence": 0.9978,
+              "start": 15,
+              "end": 20,
+              "source": "LAYA"
+            },
+            {
+              "text": "Daniel Okafor",
+              "type": "PERSON",
+              "confidence": 0.9953,
+              "start": 169,
+              "end": 182,
+              "source": "LAYA"
+            },
+            {
+              "text": "daniel.okafor@example.com",
+              "type": "EMAIL",
+              "confidence": 0.999,
+              "start": 223,
+              "end": 248,
+              "source": "HYBRID"
+            },
+            {
+              "text": "+44 20 7946 0412",
+              "type": "PHONE",
+              "confidence": 0.999,
+              "start": 274,
+              "end": 290,
+              "source": "HYBRID"
+            },
+            {
+              "text": "4 Canal Street, Manchester M1 3HE",
+              "type": "ADDRESS",
+              "confidence": 0.9949,
+              "start": 317,
+              "end": 350,
+              "source": "LAYA"
+            },
+            {
+              "text": "Daniel",
+              "type": "PERSON",
+              "confidence": 0.7602,
+              "start": 361,
+              "end": 367,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 5,
+            "fp": 1,
+            "fn": 0,
+            "predictions": 6,
+            "gold": 5,
+            "tp_pred": 5,
+            "typed_found": 5,
+            "typed_tp_pred": 5,
+            "gold_chars": 93,
+            "gold_chars_covered": 93,
+            "extra_chars": 5,
+            "fp_examples": [
+              {
+                "text": "58214",
+                "type": "ADDRESS"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "EMAIL",
+              "PHONE",
+              "ADDRESS",
+              "PERSON"
+            ],
+            "gold_types": [
+              "PERSON",
+              "EMAIL",
+              "PHONE",
+              "ADDRESS",
+              "PERSON"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "document": "03-hr-note.txt",
+      "characters": 308,
+      "gold": 5,
+      "methods": {
+        "REGEX": {
+          "durationMs": 0,
+          "wallMs": 11,
+          "entities": [
+            {
+              "text": "NL91 ABNA 0417 1643 00",
+              "type": "IBAN",
+              "confidence": 0.99,
+              "start": 207,
+              "end": 229,
+              "source": "REGEX"
+            }
+          ],
+          "score": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 4,
+            "predictions": 1,
+            "gold": 5,
+            "tp_pred": 1,
+            "typed_found": 1,
+            "typed_tp_pred": 1,
+            "gold_chars": 71,
+            "gold_chars_covered": 22,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [
+              {
+                "text": "Sofia Martens",
+                "type": "PERSON"
+              },
+              {
+                "text": "65 929 970 489",
+                "type": "ID_NUMBER"
+              },
+              {
+                "text": "C01X00T47",
+                "type": "ID_NUMBER"
+              },
+              {
+                "text": "Thomas Brandt",
+                "type": "PERSON"
+              }
+            ],
+            "found_types": [
+              "IBAN"
+            ],
+            "gold_types": [
+              "PERSON",
+              "ID_NUMBER",
+              "ID_NUMBER",
+              "IBAN",
+              "PERSON"
+            ]
+          }
+        },
+        "MODEL": {
+          "durationMs": 13149,
+          "wallMs": 13154,
+          "entities": [
+            {
+              "text": "Sofia Martens",
+              "type": "PERSON",
+              "confidence": 0.9998,
+              "start": 24,
+              "end": 37,
+              "source": "LAYA"
+            },
+            {
+              "text": "Hamburg",
+              "type": "LOCATION",
+              "confidence": 0.9952,
+              "start": 49,
+              "end": 56,
+              "source": "LAYA"
+            },
+            {
+              "text": "1 March 2021",
+              "type": "OTHER",
+              "confidence": 0.9994,
+              "start": 67,
+              "end": 79,
+              "source": "LAYA"
+            },
+            {
+              "text": "65 929 970 489",
+              "type": "ID_NUMBER",
+              "confidence": 0.9999,
+              "start": 132,
+              "end": 146,
+              "source": "LAYA"
+            },
+            {
+              "text": "C01X00T47",
+              "type": "ID_NUMBER",
+              "confidence": 0.9998,
+              "start": 174,
+              "end": 183,
+              "source": "LAYA"
+            },
+            {
+              "text": "NL91 ABNA 0417 1643 00",
+              "type": "ID_NUMBER",
+              "confidence": 0.9774,
+              "start": 207,
+              "end": 229,
+              "source": "LAYA"
+            },
+            {
+              "text": "Thomas Brandt",
+              "type": "PERSON",
+              "confidence": 0.9982,
+              "start": 268,
+              "end": 281,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 5,
+            "fp": 2,
+            "fn": 0,
+            "predictions": 7,
+            "gold": 5,
+            "tp_pred": 5,
+            "typed_found": 4,
+            "typed_tp_pred": 4,
+            "gold_chars": 71,
+            "gold_chars_covered": 71,
+            "extra_chars": 19,
+            "fp_examples": [
+              {
+                "text": "Hamburg",
+                "type": "LOCATION"
+              },
+              {
+                "text": "1 March 2021",
+                "type": "OTHER"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "ID_NUMBER",
+              "ID_NUMBER",
+              "IBAN",
+              "PERSON"
+            ],
+            "gold_types": [
+              "PERSON",
+              "ID_NUMBER",
+              "ID_NUMBER",
+              "IBAN",
+              "PERSON"
+            ]
+          }
+        },
+        "HYBRID": {
+          "durationMs": 13347,
+          "wallMs": 13354,
+          "entities": [
+            {
+              "text": "Sofia Martens",
+              "type": "PERSON",
+              "confidence": 0.9998,
+              "start": 24,
+              "end": 37,
+              "source": "LAYA"
+            },
+            {
+              "text": "Hamburg",
+              "type": "LOCATION",
+              "confidence": 0.9952,
+              "start": 49,
+              "end": 56,
+              "source": "LAYA"
+            },
+            {
+              "text": "1 March 2021",
+              "type": "OTHER",
+              "confidence": 0.9994,
+              "start": 67,
+              "end": 79,
+              "source": "LAYA"
+            },
+            {
+              "text": "65 929 970 489",
+              "type": "ID_NUMBER",
+              "confidence": 0.9999,
+              "start": 132,
+              "end": 146,
+              "source": "LAYA"
+            },
+            {
+              "text": "C01X00T47",
+              "type": "ID_NUMBER",
+              "confidence": 0.9998,
+              "start": 174,
+              "end": 183,
+              "source": "LAYA"
+            },
+            {
+              "text": "NL91 ABNA 0417 1643 00",
+              "type": "IBAN",
+              "confidence": 0.99,
+              "start": 207,
+              "end": 229,
+              "source": "HYBRID"
+            },
+            {
+              "text": "Thomas Brandt",
+              "type": "PERSON",
+              "confidence": 0.9982,
+              "start": 268,
+              "end": 281,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 5,
+            "fp": 2,
+            "fn": 0,
+            "predictions": 7,
+            "gold": 5,
+            "tp_pred": 5,
+            "typed_found": 5,
+            "typed_tp_pred": 5,
+            "gold_chars": 71,
+            "gold_chars_covered": 71,
+            "extra_chars": 19,
+            "fp_examples": [
+              {
+                "text": "Hamburg",
+                "type": "LOCATION"
+              },
+              {
+                "text": "1 March 2021",
+                "type": "OTHER"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "ID_NUMBER",
+              "ID_NUMBER",
+              "IBAN",
+              "PERSON"
+            ],
+            "gold_types": [
+              "PERSON",
+              "ID_NUMBER",
+              "ID_NUMBER",
+              "IBAN",
+              "PERSON"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "document": "04-ambiguous-meeting.txt",
+      "characters": 364,
+      "gold": 2,
+      "methods": {
+        "REGEX": {
+          "durationMs": 0,
+          "wallMs": 6,
+          "entities": [],
+          "score": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 2,
+            "predictions": 0,
+            "gold": 2,
+            "tp_pred": 0,
+            "typed_found": 0,
+            "typed_tp_pred": 0,
+            "gold_chars": 21,
+            "gold_chars_covered": 0,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [
+              {
+                "text": "Nino Beridze",
+                "type": "PERSON"
+              },
+              {
+                "text": "Mark Chen",
+                "type": "PERSON"
+              }
+            ],
+            "found_types": [],
+            "gold_types": [
+              "PERSON",
+              "PERSON"
+            ]
+          }
+        },
+        "MODEL": {
+          "durationMs": 9108,
+          "wallMs": 9112,
+          "entities": [
+            {
+              "text": "Nino Beridze",
+              "type": "PERSON",
+              "confidence": 0.9938,
+              "start": 162,
+              "end": 174,
+              "source": "LAYA"
+            },
+            {
+              "text": "Victoria",
+              "type": "LOCATION",
+              "confidence": 0.9859,
+              "start": 186,
+              "end": 194,
+              "source": "LAYA"
+            },
+            {
+              "text": "Mark Chen",
+              "type": "PERSON",
+              "confidence": 0.9934,
+              "start": 329,
+              "end": 338,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 2,
+            "fp": 1,
+            "fn": 0,
+            "predictions": 3,
+            "gold": 2,
+            "tp_pred": 2,
+            "typed_found": 2,
+            "typed_tp_pred": 2,
+            "gold_chars": 21,
+            "gold_chars_covered": 21,
+            "extra_chars": 8,
+            "fp_examples": [
+              {
+                "text": "Victoria",
+                "type": "LOCATION"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "PERSON"
+            ],
+            "gold_types": [
+              "PERSON",
+              "PERSON"
+            ]
+          }
+        },
+        "HYBRID": {
+          "durationMs": 9253,
+          "wallMs": 9257,
+          "entities": [
+            {
+              "text": "Nino Beridze",
+              "type": "PERSON",
+              "confidence": 0.9938,
+              "start": 162,
+              "end": 174,
+              "source": "LAYA"
+            },
+            {
+              "text": "Victoria",
+              "type": "LOCATION",
+              "confidence": 0.9859,
+              "start": 186,
+              "end": 194,
+              "source": "LAYA"
+            },
+            {
+              "text": "Mark Chen",
+              "type": "PERSON",
+              "confidence": 0.9934,
+              "start": 329,
+              "end": 338,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 2,
+            "fp": 1,
+            "fn": 0,
+            "predictions": 3,
+            "gold": 2,
+            "tp_pred": 2,
+            "typed_found": 2,
+            "typed_tp_pred": 2,
+            "gold_chars": 21,
+            "gold_chars_covered": 21,
+            "extra_chars": 8,
+            "fp_examples": [
+              {
+                "text": "Victoria",
+                "type": "LOCATION"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "PERSON"
+            ],
+            "gold_types": [
+              "PERSON",
+              "PERSON"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "document": "05-medical-letter.txt",
+      "characters": 353,
+      "gold": 8,
+      "methods": {
+        "REGEX": {
+          "durationMs": 0,
+          "wallMs": 4,
+          "entities": [
+            {
+              "text": "01865 555 019",
+              "type": "PHONE",
+              "confidence": 0.85,
+              "start": 255,
+              "end": 268,
+              "source": "REGEX"
+            },
+            {
+              "text": "harriet.lowe@example.net",
+              "type": "EMAIL",
+              "confidence": 0.97,
+              "start": 275,
+              "end": 299,
+              "source": "REGEX"
+            }
+          ],
+          "score": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 6,
+            "predictions": 2,
+            "gold": 8,
+            "tp_pred": 2,
+            "typed_found": 2,
+            "typed_tp_pred": 2,
+            "gold_chars": 124,
+            "gold_chars_covered": 37,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [
+              {
+                "text": "Harriet Lowe",
+                "type": "PERSON"
+              },
+              {
+                "text": "22 June 1974",
+                "type": "DATE_OF_BIRTH"
+              },
+              {
+                "text": "943 476 5919",
+                "type": "ID_NUMBER"
+              },
+              {
+                "text": "9 Orchard Lane, Oxford OX2 6HT",
+                "type": "ADDRESS"
+              },
+              {
+                "text": "Dr Patel",
+                "type": "PERSON"
+              },
+              {
+                "text": "Dr Susan Reid",
+                "type": "PERSON"
+              }
+            ],
+            "found_types": [
+              "PHONE",
+              "EMAIL"
+            ],
+            "gold_types": [
+              "PERSON",
+              "DATE_OF_BIRTH",
+              "ID_NUMBER",
+              "ADDRESS",
+              "PERSON",
+              "PHONE",
+              "EMAIL",
+              "PERSON"
+            ]
+          }
+        },
+        "MODEL": {
+          "durationMs": 26454,
+          "wallMs": 26460,
+          "entities": [
+            {
+              "text": "Harriet Lowe",
+              "type": "PERSON",
+              "confidence": 0.9937,
+              "start": 32,
+              "end": 44,
+              "source": "LAYA"
+            },
+            {
+              "text": "22 June 1974",
+              "type": "DATE_OF_BIRTH",
+              "confidence": 0.9999,
+              "start": 51,
+              "end": 63,
+              "source": "LAYA"
+            },
+            {
+              "text": "943 476 5919",
+              "type": "ID_NUMBER",
+              "confidence": 0.9995,
+              "start": 76,
+              "end": 88,
+              "source": "LAYA"
+            },
+            {
+              "text": "9 Orchard Lane, Oxford OX2 6HT",
+              "type": "ADDRESS",
+              "confidence": 0.9977,
+              "start": 103,
+              "end": 133,
+              "source": "LAYA"
+            },
+            {
+              "text": "Patel",
+              "type": "PERSON",
+              "confidence": 0.9996,
+              "start": 143,
+              "end": 148,
+              "source": "LAYA"
+            },
+            {
+              "text": "January",
+              "type": "OTHER",
+              "confidence": 0.7357,
+              "start": 224,
+              "end": 231,
+              "source": "LAYA"
+            },
+            {
+              "text": "01865 555 019",
+              "type": "PHONE",
+              "confidence": 0.9998,
+              "start": 255,
+              "end": 268,
+              "source": "LAYA"
+            },
+            {
+              "text": "harriet.lowe@example.net",
+              "type": "EMAIL",
+              "confidence": 0.9909,
+              "start": 275,
+              "end": 299,
+              "source": "LAYA"
+            },
+            {
+              "text": "Susan Reid",
+              "type": "PERSON",
+              "confidence": 0.999,
+              "start": 342,
+              "end": 352,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 8,
+            "fp": 1,
+            "fn": 0,
+            "predictions": 9,
+            "gold": 8,
+            "tp_pred": 8,
+            "typed_found": 8,
+            "typed_tp_pred": 8,
+            "gold_chars": 124,
+            "gold_chars_covered": 118,
+            "extra_chars": 7,
+            "fp_examples": [
+              {
+                "text": "January",
+                "type": "OTHER"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "DATE_OF_BIRTH",
+              "ID_NUMBER",
+              "ADDRESS",
+              "PERSON",
+              "PHONE",
+              "EMAIL",
+              "PERSON"
+            ],
+            "gold_types": [
+              "PERSON",
+              "DATE_OF_BIRTH",
+              "ID_NUMBER",
+              "ADDRESS",
+              "PERSON",
+              "PHONE",
+              "EMAIL",
+              "PERSON"
+            ]
+          }
+        },
+        "HYBRID": {
+          "durationMs": 27626,
+          "wallMs": 27635,
+          "entities": [
+            {
+              "text": "Harriet Lowe",
+              "type": "PERSON",
+              "confidence": 0.9937,
+              "start": 32,
+              "end": 44,
+              "source": "LAYA"
+            },
+            {
+              "text": "22 June 1974",
+              "type": "DATE_OF_BIRTH",
+              "confidence": 0.9999,
+              "start": 51,
+              "end": 63,
+              "source": "LAYA"
+            },
+            {
+              "text": "943 476 5919",
+              "type": "ID_NUMBER",
+              "confidence": 0.9995,
+              "start": 76,
+              "end": 88,
+              "source": "LAYA"
+            },
+            {
+              "text": "9 Orchard Lane, Oxford OX2 6HT",
+              "type": "ADDRESS",
+              "confidence": 0.9977,
+              "start": 103,
+              "end": 133,
+              "source": "LAYA"
+            },
+            {
+              "text": "Patel",
+              "type": "PERSON",
+              "confidence": 0.9996,
+              "start": 143,
+              "end": 148,
+              "source": "LAYA"
+            },
+            {
+              "text": "January",
+              "type": "OTHER",
+              "confidence": 0.7357,
+              "start": 224,
+              "end": 231,
+              "source": "LAYA"
+            },
+            {
+              "text": "01865 555 019",
+              "type": "PHONE",
+              "confidence": 0.999,
+              "start": 255,
+              "end": 268,
+              "source": "HYBRID"
+            },
+            {
+              "text": "harriet.lowe@example.net",
+              "type": "EMAIL",
+              "confidence": 0.999,
+              "start": 275,
+              "end": 299,
+              "source": "HYBRID"
+            },
+            {
+              "text": "Susan Reid",
+              "type": "PERSON",
+              "confidence": 0.999,
+              "start": 342,
+              "end": 352,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 8,
+            "fp": 1,
+            "fn": 0,
+            "predictions": 9,
+            "gold": 8,
+            "tp_pred": 8,
+            "typed_found": 8,
+            "typed_tp_pred": 8,
+            "gold_chars": 124,
+            "gold_chars_covered": 118,
+            "extra_chars": 7,
+            "fp_examples": [
+              {
+                "text": "January",
+                "type": "OTHER"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "DATE_OF_BIRTH",
+              "ID_NUMBER",
+              "ADDRESS",
+              "PERSON",
+              "PHONE",
+              "EMAIL",
+              "PERSON"
+            ],
+            "gold_types": [
+              "PERSON",
+              "DATE_OF_BIRTH",
+              "ID_NUMBER",
+              "ADDRESS",
+              "PERSON",
+              "PHONE",
+              "EMAIL",
+              "PERSON"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "document": "06-invoice.txt",
+      "characters": 343,
+      "gold": 2,
+      "methods": {
+        "REGEX": {
+          "durationMs": 0,
+          "wallMs": 6,
+          "entities": [
+            {
+              "text": "GB29 NWBK 6016 1331 9268 19",
+              "type": "IBAN",
+              "confidence": 0.99,
+              "start": 248,
+              "end": 275,
+              "source": "REGEX"
+            },
+            {
+              "text": "billing@example.org",
+              "type": "EMAIL",
+              "confidence": 0.97,
+              "start": 323,
+              "end": 342,
+              "source": "REGEX"
+            }
+          ],
+          "score": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 0,
+            "predictions": 2,
+            "gold": 2,
+            "tp_pred": 2,
+            "typed_found": 2,
+            "typed_tp_pred": 2,
+            "gold_chars": 46,
+            "gold_chars_covered": 46,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [],
+            "found_types": [
+              "IBAN",
+              "EMAIL"
+            ],
+            "gold_types": [
+              "IBAN",
+              "EMAIL"
+            ]
+          }
+        },
+        "MODEL": {
+          "durationMs": 34184,
+          "wallMs": 34189,
+          "entities": [
+            {
+              "text": "21 Dock Road, Liverpool L3 4AF",
+              "type": "ADDRESS",
+              "confidence": 0.9905,
+              "start": 56,
+              "end": 86,
+              "source": "LAYA"
+            },
+            {
+              "text": "Cedar",
+              "type": "PERSON",
+              "confidence": 0.9823,
+              "start": 97,
+              "end": 102,
+              "source": "LAYA"
+            },
+            {
+              "text": "12/03/2025",
+              "type": "OTHER",
+              "confidence": 0.9945,
+              "start": 137,
+              "end": 147,
+              "source": "LAYA"
+            },
+            {
+              "text": "11/04/2025",
+              "type": "OTHER",
+              "confidence": 0.9857,
+              "start": 158,
+              "end": 168,
+              "source": "LAYA"
+            },
+            {
+              "text": "IBAN GB29 NWBK 6016 1331 9268 19",
+              "type": "ID_NUMBER",
+              "confidence": 0.9996,
+              "start": 243,
+              "end": 275,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 1,
+            "fp": 4,
+            "fn": 1,
+            "predictions": 5,
+            "gold": 2,
+            "tp_pred": 1,
+            "typed_found": 0,
+            "typed_tp_pred": 0,
+            "gold_chars": 46,
+            "gold_chars_covered": 27,
+            "extra_chars": 60,
+            "fp_examples": [
+              {
+                "text": "21 Dock Road, Liverpool L3 4AF",
+                "type": "ADDRESS"
+              },
+              {
+                "text": "Cedar",
+                "type": "PERSON"
+              },
+              {
+                "text": "12/03/2025",
+                "type": "OTHER"
+              },
+              {
+                "text": "11/04/2025",
+                "type": "OTHER"
+              }
+            ],
+            "fn_examples": [
+              {
+                "text": "billing@example.org",
+                "type": "EMAIL"
+              }
+            ],
+            "found_types": [
+              "IBAN"
+            ],
+            "gold_types": [
+              "IBAN",
+              "EMAIL"
+            ]
+          }
+        },
+        "HYBRID": {
+          "durationMs": 34026,
+          "wallMs": 34037,
+          "entities": [
+            {
+              "text": "21 Dock Road, Liverpool L3 4AF",
+              "type": "ADDRESS",
+              "confidence": 0.9905,
+              "start": 56,
+              "end": 86,
+              "source": "LAYA"
+            },
+            {
+              "text": "Cedar",
+              "type": "PERSON",
+              "confidence": 0.9823,
+              "start": 97,
+              "end": 102,
+              "source": "LAYA"
+            },
+            {
+              "text": "12/03/2025",
+              "type": "OTHER",
+              "confidence": 0.9945,
+              "start": 137,
+              "end": 147,
+              "source": "LAYA"
+            },
+            {
+              "text": "11/04/2025",
+              "type": "OTHER",
+              "confidence": 0.9857,
+              "start": 158,
+              "end": 168,
+              "source": "LAYA"
+            },
+            {
+              "text": "GB29 NWBK 6016 1331 9268 19",
+              "type": "IBAN",
+              "confidence": 0.99,
+              "start": 248,
+              "end": 275,
+              "source": "HYBRID"
+            },
+            {
+              "text": "billing@example.org",
+              "type": "EMAIL",
+              "confidence": 0.97,
+              "start": 323,
+              "end": 342,
+              "source": "REGEX"
+            }
+          ],
+          "score": {
+            "tp": 2,
+            "fp": 4,
+            "fn": 0,
+            "predictions": 6,
+            "gold": 2,
+            "tp_pred": 2,
+            "typed_found": 2,
+            "typed_tp_pred": 2,
+            "gold_chars": 46,
+            "gold_chars_covered": 46,
+            "extra_chars": 55,
+            "fp_examples": [
+              {
+                "text": "21 Dock Road, Liverpool L3 4AF",
+                "type": "ADDRESS"
+              },
+              {
+                "text": "Cedar",
+                "type": "PERSON"
+              },
+              {
+                "text": "12/03/2025",
+                "type": "OTHER"
+              },
+              {
+                "text": "11/04/2025",
+                "type": "OTHER"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "IBAN",
+              "EMAIL"
+            ],
+            "gold_types": [
+              "IBAN",
+              "EMAIL"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "document": "07-chat-log.txt",
+      "characters": 449,
+      "gold": 3,
+      "methods": {
+        "REGEX": {
+          "durationMs": 0,
+          "wallMs": 7,
+          "entities": [
+            {
+              "text": "lena.fischer92@example.com",
+              "type": "EMAIL",
+              "confidence": 0.97,
+              "start": 107,
+              "end": 133,
+              "source": "REGEX"
+            },
+            {
+              "text": "4111 1111 1111 1111",
+              "type": "CREDIT_CARD",
+              "confidence": 0.97,
+              "start": 245,
+              "end": 264,
+              "source": "REGEX"
+            },
+            {
+              "text": "0151 5550 8812",
+              "type": "PHONE",
+              "confidence": 0.85,
+              "start": 414,
+              "end": 428,
+              "source": "REGEX"
+            }
+          ],
+          "score": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 0,
+            "predictions": 3,
+            "gold": 3,
+            "tp_pred": 3,
+            "typed_found": 3,
+            "typed_tp_pred": 3,
+            "gold_chars": 59,
+            "gold_chars_covered": 59,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [],
+            "found_types": [
+              "EMAIL",
+              "CREDIT_CARD",
+              "PHONE"
+            ],
+            "gold_types": [
+              "EMAIL",
+              "CREDIT_CARD",
+              "PHONE"
+            ]
+          }
+        },
+        "MODEL": {
+          "durationMs": 21530,
+          "wallMs": 21537,
+          "entities": [
+            {
+              "text": "fischer92",
+              "type": "EMAIL",
+              "confidence": 0.9997,
+              "start": 112,
+              "end": 121,
+              "source": "LAYA"
+            },
+            {
+              "text": "4111",
+              "type": "ID_NUMBER",
+              "confidence": 0.9527,
+              "start": 245,
+              "end": 249,
+              "source": "LAYA"
+            },
+            {
+              "text": "0151 5550 8812",
+              "type": "PHONE",
+              "confidence": 0.9998,
+              "start": 414,
+              "end": 428,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 0,
+            "predictions": 3,
+            "gold": 3,
+            "tp_pred": 3,
+            "typed_found": 2,
+            "typed_tp_pred": 2,
+            "gold_chars": 59,
+            "gold_chars_covered": 27,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [],
+            "found_types": [
+              "EMAIL",
+              "CREDIT_CARD",
+              "PHONE"
+            ],
+            "gold_types": [
+              "EMAIL",
+              "CREDIT_CARD",
+              "PHONE"
+            ]
+          }
+        },
+        "HYBRID": {
+          "durationMs": 21181,
+          "wallMs": 21189,
+          "entities": [
+            {
+              "text": "lena.fischer92@example.com",
+              "type": "EMAIL",
+              "confidence": 0.999,
+              "start": 107,
+              "end": 133,
+              "source": "HYBRID"
+            },
+            {
+              "text": "4111 1111 1111 1111",
+              "type": "CREDIT_CARD",
+              "confidence": 0.97,
+              "start": 245,
+              "end": 264,
+              "source": "HYBRID"
+            },
+            {
+              "text": "0151 5550 8812",
+              "type": "PHONE",
+              "confidence": 0.999,
+              "start": 414,
+              "end": 428,
+              "source": "HYBRID"
+            }
+          ],
+          "score": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 0,
+            "predictions": 3,
+            "gold": 3,
+            "tp_pred": 3,
+            "typed_found": 3,
+            "typed_tp_pred": 3,
+            "gold_chars": 59,
+            "gold_chars_covered": 59,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [],
+            "found_types": [
+              "EMAIL",
+              "CREDIT_CARD",
+              "PHONE"
+            ],
+            "gold_types": [
+              "EMAIL",
+              "CREDIT_CARD",
+              "PHONE"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "document": "08-rental-application.txt",
+      "characters": 311,
+      "gold": 7,
+      "methods": {
+        "REGEX": {
+          "durationMs": 0,
+          "wallMs": 8,
+          "entities": [
+            {
+              "text": "+34 612 555 019",
+              "type": "PHONE",
+              "confidence": 0.92,
+              "start": 133,
+              "end": 148,
+              "source": "REGEX"
+            },
+            {
+              "text": "mateo.alvarez@example.es",
+              "type": "EMAIL",
+              "confidence": 0.97,
+              "start": 156,
+              "end": 180,
+              "source": "REGEX"
+            },
+            {
+              "text": "+34 699 555 230",
+              "type": "PHONE",
+              "confidence": 0.92,
+              "start": 295,
+              "end": 310,
+              "source": "REGEX"
+            }
+          ],
+          "score": {
+            "tp": 3,
+            "fp": 0,
+            "fn": 4,
+            "predictions": 3,
+            "gold": 7,
+            "tp_pred": 3,
+            "typed_found": 3,
+            "typed_tp_pred": 3,
+            "gold_chars": 126,
+            "gold_chars_covered": 54,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [
+              {
+                "text": "Mateo Alvarez Ruiz",
+                "type": "PERSON"
+              },
+              {
+                "text": "1992-09-30",
+                "type": "DATE_OF_BIRTH"
+              },
+              {
+                "text": "Calle de Alcala 45, 28014 Madrid",
+                "type": "ADDRESS"
+              },
+              {
+                "text": "Lucia Moreno",
+                "type": "PERSON"
+              }
+            ],
+            "found_types": [
+              "PHONE",
+              "EMAIL",
+              "PHONE"
+            ],
+            "gold_types": [
+              "PERSON",
+              "DATE_OF_BIRTH",
+              "ADDRESS",
+              "PHONE",
+              "EMAIL",
+              "PERSON",
+              "PHONE"
+            ]
+          }
+        },
+        "MODEL": {
+          "durationMs": 29637,
+          "wallMs": 29641,
+          "entities": [
+            {
+              "text": "Mateo Alvarez Ruiz",
+              "type": "PERSON",
+              "confidence": 0.999,
+              "start": 31,
+              "end": 49,
+              "source": "LAYA"
+            },
+            {
+              "text": "1992-09-30",
+              "type": "DATE_OF_BIRTH",
+              "confidence": 0.9999,
+              "start": 65,
+              "end": 75,
+              "source": "LAYA"
+            },
+            {
+              "text": "Calle",
+              "type": "ADDRESS",
+              "confidence": 0.9995,
+              "start": 93,
+              "end": 98,
+              "source": "LAYA"
+            },
+            {
+              "text": "Alcala 45, 28014 Madrid",
+              "type": "ADDRESS",
+              "confidence": 0.9989,
+              "start": 102,
+              "end": 125,
+              "source": "LAYA"
+            },
+            {
+              "text": "+34 612 555 019",
+              "type": "PHONE",
+              "confidence": 0.9998,
+              "start": 133,
+              "end": 148,
+              "source": "LAYA"
+            },
+            {
+              "text": "mateo.alvarez@example.es",
+              "type": "EMAIL",
+              "confidence": 0.9996,
+              "start": 156,
+              "end": 180,
+              "source": "LAYA"
+            },
+            {
+              "text": "Iberia",
+              "type": "PERSON",
+              "confidence": 0.9359,
+              "start": 191,
+              "end": 197,
+              "source": "LAYA"
+            },
+            {
+              "text": "Lucia Moreno",
+              "type": "PERSON",
+              "confidence": 0.9998,
+              "start": 261,
+              "end": 273,
+              "source": "LAYA"
+            },
+            {
+              "text": "+34 699 555 230",
+              "type": "PHONE",
+              "confidence": 0.9995,
+              "start": 295,
+              "end": 310,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 7,
+            "fp": 1,
+            "fn": 0,
+            "predictions": 9,
+            "gold": 7,
+            "tp_pred": 8,
+            "typed_found": 7,
+            "typed_tp_pred": 8,
+            "gold_chars": 126,
+            "gold_chars_covered": 122,
+            "extra_chars": 6,
+            "fp_examples": [
+              {
+                "text": "Iberia",
+                "type": "PERSON"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "DATE_OF_BIRTH",
+              "ADDRESS",
+              "PHONE",
+              "EMAIL",
+              "PERSON",
+              "PHONE"
+            ],
+            "gold_types": [
+              "PERSON",
+              "DATE_OF_BIRTH",
+              "ADDRESS",
+              "PHONE",
+              "EMAIL",
+              "PERSON",
+              "PHONE"
+            ]
+          }
+        },
+        "HYBRID": {
+          "durationMs": 30456,
+          "wallMs": 30464,
+          "entities": [
+            {
+              "text": "Mateo Alvarez Ruiz",
+              "type": "PERSON",
+              "confidence": 0.999,
+              "start": 31,
+              "end": 49,
+              "source": "LAYA"
+            },
+            {
+              "text": "1992-09-30",
+              "type": "DATE_OF_BIRTH",
+              "confidence": 0.9999,
+              "start": 65,
+              "end": 75,
+              "source": "LAYA"
+            },
+            {
+              "text": "Calle",
+              "type": "ADDRESS",
+              "confidence": 0.9995,
+              "start": 93,
+              "end": 98,
+              "source": "LAYA"
+            },
+            {
+              "text": "Alcala 45, 28014 Madrid",
+              "type": "ADDRESS",
+              "confidence": 0.9989,
+              "start": 102,
+              "end": 125,
+              "source": "LAYA"
+            },
+            {
+              "text": "+34 612 555 019",
+              "type": "PHONE",
+              "confidence": 0.999,
+              "start": 133,
+              "end": 148,
+              "source": "HYBRID"
+            },
+            {
+              "text": "mateo.alvarez@example.es",
+              "type": "EMAIL",
+              "confidence": 0.999,
+              "start": 156,
+              "end": 180,
+              "source": "HYBRID"
+            },
+            {
+              "text": "Iberia",
+              "type": "PERSON",
+              "confidence": 0.9359,
+              "start": 191,
+              "end": 197,
+              "source": "LAYA"
+            },
+            {
+              "text": "Lucia Moreno",
+              "type": "PERSON",
+              "confidence": 0.9998,
+              "start": 261,
+              "end": 273,
+              "source": "LAYA"
+            },
+            {
+              "text": "+34 699 555 230",
+              "type": "PHONE",
+              "confidence": 0.999,
+              "start": 295,
+              "end": 310,
+              "source": "HYBRID"
+            }
+          ],
+          "score": {
+            "tp": 7,
+            "fp": 1,
+            "fn": 0,
+            "predictions": 9,
+            "gold": 7,
+            "tp_pred": 8,
+            "typed_found": 7,
+            "typed_tp_pred": 8,
+            "gold_chars": 126,
+            "gold_chars_covered": 122,
+            "extra_chars": 6,
+            "fp_examples": [
+              {
+                "text": "Iberia",
+                "type": "PERSON"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "DATE_OF_BIRTH",
+              "ADDRESS",
+              "PHONE",
+              "EMAIL",
+              "PERSON",
+              "PHONE"
+            ],
+            "gold_types": [
+              "PERSON",
+              "DATE_OF_BIRTH",
+              "ADDRESS",
+              "PHONE",
+              "EMAIL",
+              "PERSON",
+              "PHONE"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "document": "09-incident-report.txt",
+      "characters": 377,
+      "gold": 3,
+      "methods": {
+        "REGEX": {
+          "durationMs": 0,
+          "wallMs": 6,
+          "entities": [
+            {
+              "text": "p.raman@example.com",
+              "type": "EMAIL",
+              "confidence": 0.97,
+              "start": 173,
+              "end": 192,
+              "source": "REGEX"
+            }
+          ],
+          "score": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 2,
+            "predictions": 1,
+            "gold": 3,
+            "tp_pred": 1,
+            "typed_found": 1,
+            "typed_tp_pred": 1,
+            "gold_chars": 42,
+            "gold_chars_covered": 19,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [
+              {
+                "text": "Priya Raman",
+                "type": "PERSON"
+              },
+              {
+                "text": "Oliver Grant",
+                "type": "PERSON"
+              }
+            ],
+            "found_types": [
+              "EMAIL"
+            ],
+            "gold_types": [
+              "PERSON",
+              "EMAIL",
+              "PERSON"
+            ]
+          }
+        },
+        "MODEL": {
+          "durationMs": 11486,
+          "wallMs": 11493,
+          "entities": [
+            {
+              "text": "INC-7731",
+              "type": "ID_NUMBER",
+              "confidence": 0.9696,
+              "start": 25,
+              "end": 33,
+              "source": "LAYA"
+            },
+            {
+              "text": "14 February 2025",
+              "type": "OTHER",
+              "confidence": 0.9993,
+              "start": 38,
+              "end": 54,
+              "source": "LAYA"
+            },
+            {
+              "text": "Priya Raman",
+              "type": "PERSON",
+              "confidence": 0.9997,
+              "start": 160,
+              "end": 171,
+              "source": "LAYA"
+            },
+            {
+              "text": "p.raman@example.com",
+              "type": "EMAIL",
+              "confidence": 0.9996,
+              "start": 173,
+              "end": 192,
+              "source": "LAYA"
+            },
+            {
+              "text": "Oliver Grant",
+              "type": "PERSON",
+              "confidence": 0.9988,
+              "start": 217,
+              "end": 229,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 3,
+            "fp": 2,
+            "fn": 0,
+            "predictions": 5,
+            "gold": 3,
+            "tp_pred": 3,
+            "typed_found": 3,
+            "typed_tp_pred": 3,
+            "gold_chars": 42,
+            "gold_chars_covered": 42,
+            "extra_chars": 24,
+            "fp_examples": [
+              {
+                "text": "INC-7731",
+                "type": "ID_NUMBER"
+              },
+              {
+                "text": "14 February 2025",
+                "type": "OTHER"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "EMAIL",
+              "PERSON"
+            ],
+            "gold_types": [
+              "PERSON",
+              "EMAIL",
+              "PERSON"
+            ]
+          }
+        },
+        "HYBRID": {
+          "durationMs": 11234,
+          "wallMs": 11242,
+          "entities": [
+            {
+              "text": "INC-7731",
+              "type": "ID_NUMBER",
+              "confidence": 0.9696,
+              "start": 25,
+              "end": 33,
+              "source": "LAYA"
+            },
+            {
+              "text": "14 February 2025",
+              "type": "OTHER",
+              "confidence": 0.9993,
+              "start": 38,
+              "end": 54,
+              "source": "LAYA"
+            },
+            {
+              "text": "Priya Raman",
+              "type": "PERSON",
+              "confidence": 0.9997,
+              "start": 160,
+              "end": 171,
+              "source": "LAYA"
+            },
+            {
+              "text": "p.raman@example.com",
+              "type": "EMAIL",
+              "confidence": 0.999,
+              "start": 173,
+              "end": 192,
+              "source": "HYBRID"
+            },
+            {
+              "text": "Oliver Grant",
+              "type": "PERSON",
+              "confidence": 0.9988,
+              "start": 217,
+              "end": 229,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 3,
+            "fp": 2,
+            "fn": 0,
+            "predictions": 5,
+            "gold": 3,
+            "tp_pred": 3,
+            "typed_found": 3,
+            "typed_tp_pred": 3,
+            "gold_chars": 42,
+            "gold_chars_covered": 42,
+            "extra_chars": 24,
+            "fp_examples": [
+              {
+                "text": "INC-7731",
+                "type": "ID_NUMBER"
+              },
+              {
+                "text": "14 February 2025",
+                "type": "OTHER"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "EMAIL",
+              "PERSON"
+            ],
+            "gold_types": [
+              "PERSON",
+              "EMAIL",
+              "PERSON"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "document": "10-us-benefits-form.txt",
+      "characters": 260,
+      "gold": 7,
+      "methods": {
+        "REGEX": {
+          "durationMs": 0,
+          "wallMs": 3,
+          "entities": [
+            {
+              "text": "(555) 014-2233",
+              "type": "PHONE",
+              "confidence": 0.85,
+              "start": 156,
+              "end": 170,
+              "source": "REGEX"
+            }
+          ],
+          "score": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 6,
+            "predictions": 1,
+            "gold": 7,
+            "tp_pred": 1,
+            "typed_found": 1,
+            "typed_tp_pred": 1,
+            "gold_chars": 111,
+            "gold_chars_covered": 14,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [
+              {
+                "text": "Jessica Morgan",
+                "type": "PERSON"
+              },
+              {
+                "text": "078-05-1120",
+                "type": "ID_NUMBER"
+              },
+              {
+                "text": "03/15/1985",
+                "type": "DATE_OF_BIRTH"
+              },
+              {
+                "text": "1420 Maple Avenue, Springfield, IL 62704",
+                "type": "ADDRESS"
+              },
+              {
+                "text": "Ethan Morgan",
+                "type": "PERSON"
+              },
+              {
+                "text": "07/22/2016",
+                "type": "DATE_OF_BIRTH"
+              }
+            ],
+            "found_types": [
+              "PHONE"
+            ],
+            "gold_types": [
+              "PERSON",
+              "ID_NUMBER",
+              "DATE_OF_BIRTH",
+              "ADDRESS",
+              "PHONE",
+              "PERSON",
+              "DATE_OF_BIRTH"
+            ]
+          }
+        },
+        "MODEL": {
+          "durationMs": 21018,
+          "wallMs": 21029,
+          "entities": [
+            {
+              "text": "Jessica Morgan",
+              "type": "PERSON",
+              "confidence": 0.9931,
+              "start": 36,
+              "end": 50,
+              "source": "LAYA"
+            },
+            {
+              "text": "078-05-1120",
+              "type": "ID_NUMBER",
+              "confidence": 0.9997,
+              "start": 56,
+              "end": 67,
+              "source": "LAYA"
+            },
+            {
+              "text": "03/15/1985",
+              "type": "DATE_OF_BIRTH",
+              "confidence": 0.9999,
+              "start": 83,
+              "end": 93,
+              "source": "LAYA"
+            },
+            {
+              "text": "1420 Maple Avenue, Springfield, IL 62704",
+              "type": "ADDRESS",
+              "confidence": 0.9801,
+              "start": 108,
+              "end": 148,
+              "source": "LAYA"
+            },
+            {
+              "text": "(555) 014-2233",
+              "type": "PHONE",
+              "confidence": 0.9999,
+              "start": 156,
+              "end": 170,
+              "source": "LAYA"
+            },
+            {
+              "text": "Ethan Morgan",
+              "type": "PERSON",
+              "confidence": 0.995,
+              "start": 182,
+              "end": 194,
+              "source": "LAYA"
+            },
+            {
+              "text": "07/22/2016",
+              "type": "DATE_OF_BIRTH",
+              "confidence": 0.9998,
+              "start": 201,
+              "end": 211,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 7,
+            "fp": 0,
+            "fn": 0,
+            "predictions": 7,
+            "gold": 7,
+            "tp_pred": 7,
+            "typed_found": 7,
+            "typed_tp_pred": 7,
+            "gold_chars": 111,
+            "gold_chars_covered": 111,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "ID_NUMBER",
+              "DATE_OF_BIRTH",
+              "ADDRESS",
+              "PHONE",
+              "PERSON",
+              "DATE_OF_BIRTH"
+            ],
+            "gold_types": [
+              "PERSON",
+              "ID_NUMBER",
+              "DATE_OF_BIRTH",
+              "ADDRESS",
+              "PHONE",
+              "PERSON",
+              "DATE_OF_BIRTH"
+            ]
+          }
+        },
+        "HYBRID": {
+          "durationMs": 21064,
+          "wallMs": 21073,
+          "entities": [
+            {
+              "text": "Jessica Morgan",
+              "type": "PERSON",
+              "confidence": 0.9931,
+              "start": 36,
+              "end": 50,
+              "source": "LAYA"
+            },
+            {
+              "text": "078-05-1120",
+              "type": "ID_NUMBER",
+              "confidence": 0.9997,
+              "start": 56,
+              "end": 67,
+              "source": "LAYA"
+            },
+            {
+              "text": "03/15/1985",
+              "type": "DATE_OF_BIRTH",
+              "confidence": 0.9999,
+              "start": 83,
+              "end": 93,
+              "source": "LAYA"
+            },
+            {
+              "text": "1420 Maple Avenue, Springfield, IL 62704",
+              "type": "ADDRESS",
+              "confidence": 0.9801,
+              "start": 108,
+              "end": 148,
+              "source": "LAYA"
+            },
+            {
+              "text": "(555) 014-2233",
+              "type": "PHONE",
+              "confidence": 0.999,
+              "start": 156,
+              "end": 170,
+              "source": "HYBRID"
+            },
+            {
+              "text": "Ethan Morgan",
+              "type": "PERSON",
+              "confidence": 0.995,
+              "start": 182,
+              "end": 194,
+              "source": "LAYA"
+            },
+            {
+              "text": "07/22/2016",
+              "type": "DATE_OF_BIRTH",
+              "confidence": 0.9998,
+              "start": 201,
+              "end": 211,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 7,
+            "fp": 0,
+            "fn": 0,
+            "predictions": 7,
+            "gold": 7,
+            "tp_pred": 7,
+            "typed_found": 7,
+            "typed_tp_pred": 7,
+            "gold_chars": 111,
+            "gold_chars_covered": 111,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "ID_NUMBER",
+              "DATE_OF_BIRTH",
+              "ADDRESS",
+              "PHONE",
+              "PERSON",
+              "DATE_OF_BIRTH"
+            ],
+            "gold_types": [
+              "PERSON",
+              "ID_NUMBER",
+              "DATE_OF_BIRTH",
+              "ADDRESS",
+              "PHONE",
+              "PERSON",
+              "DATE_OF_BIRTH"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "document": "11-project-update.txt",
+      "characters": 358,
+      "gold": 0,
+      "methods": {
+        "REGEX": {
+          "durationMs": 0,
+          "wallMs": 8,
+          "entities": [],
+          "score": {
+            "tp": 0,
+            "fp": 0,
+            "fn": 0,
+            "predictions": 0,
+            "gold": 0,
+            "tp_pred": 0,
+            "typed_found": 0,
+            "typed_tp_pred": 0,
+            "gold_chars": 0,
+            "gold_chars_covered": 0,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [],
+            "found_types": [],
+            "gold_types": []
+          }
+        },
+        "MODEL": {
+          "durationMs": 11745,
+          "wallMs": 11751,
+          "entities": [
+            {
+              "text": "Frankfurt",
+              "type": "LOCATION",
+              "confidence": 0.5891,
+              "start": 77,
+              "end": 86,
+              "source": "LAYA"
+            },
+            {
+              "text": "Berlin",
+              "type": "LOCATION",
+              "confidence": 0.7601,
+              "start": 278,
+              "end": 284,
+              "source": "LAYA"
+            },
+            {
+              "text": "October 2025",
+              "type": "OTHER",
+              "confidence": 0.591,
+              "start": 333,
+              "end": 345,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 0,
+            "fp": 3,
+            "fn": 0,
+            "predictions": 3,
+            "gold": 0,
+            "tp_pred": 0,
+            "typed_found": 0,
+            "typed_tp_pred": 0,
+            "gold_chars": 0,
+            "gold_chars_covered": 0,
+            "extra_chars": 27,
+            "fp_examples": [
+              {
+                "text": "Frankfurt",
+                "type": "LOCATION"
+              },
+              {
+                "text": "Berlin",
+                "type": "LOCATION"
+              },
+              {
+                "text": "October 2025",
+                "type": "OTHER"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [],
+            "gold_types": []
+          }
+        },
+        "HYBRID": {
+          "durationMs": 11729,
+          "wallMs": 11736,
+          "entities": [
+            {
+              "text": "Frankfurt",
+              "type": "LOCATION",
+              "confidence": 0.5891,
+              "start": 77,
+              "end": 86,
+              "source": "LAYA"
+            },
+            {
+              "text": "Berlin",
+              "type": "LOCATION",
+              "confidence": 0.7601,
+              "start": 278,
+              "end": 284,
+              "source": "LAYA"
+            },
+            {
+              "text": "October 2025",
+              "type": "OTHER",
+              "confidence": 0.591,
+              "start": 333,
+              "end": 345,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 0,
+            "fp": 3,
+            "fn": 0,
+            "predictions": 3,
+            "gold": 0,
+            "tp_pred": 0,
+            "typed_found": 0,
+            "typed_tp_pred": 0,
+            "gold_chars": 0,
+            "gold_chars_covered": 0,
+            "extra_chars": 27,
+            "fp_examples": [
+              {
+                "text": "Frankfurt",
+                "type": "LOCATION"
+              },
+              {
+                "text": "Berlin",
+                "type": "LOCATION"
+              },
+              {
+                "text": "October 2025",
+                "type": "OTHER"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [],
+            "gold_types": []
+          }
+        }
+      }
+    },
+    {
+      "document": "12-reference-letter.txt",
+      "characters": 349,
+      "gold": 5,
+      "methods": {
+        "REGEX": {
+          "durationMs": 0,
+          "wallMs": 6,
+          "entities": [
+            {
+              "text": "j.whitfield@example.co.uk",
+              "type": "EMAIL",
+              "confidence": 0.97,
+              "start": 234,
+              "end": 259,
+              "source": "REGEX"
+            },
+            {
+              "text": "+44 113 496 0587",
+              "type": "PHONE",
+              "confidence": 0.92,
+              "start": 263,
+              "end": 279,
+              "source": "REGEX"
+            }
+          ],
+          "score": {
+            "tp": 2,
+            "fp": 0,
+            "fn": 3,
+            "predictions": 2,
+            "gold": 5,
+            "tp_pred": 2,
+            "typed_found": 2,
+            "typed_tp_pred": 2,
+            "gold_chars": 76,
+            "gold_chars_covered": 41,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [
+              {
+                "text": "Amelia Hartley",
+                "type": "PERSON"
+              },
+              {
+                "text": "Amelia",
+                "type": "PERSON"
+              },
+              {
+                "text": "James Whitfield",
+                "type": "PERSON"
+              }
+            ],
+            "found_types": [
+              "EMAIL",
+              "PHONE"
+            ],
+            "gold_types": [
+              "PERSON",
+              "PERSON",
+              "EMAIL",
+              "PHONE",
+              "PERSON"
+            ]
+          }
+        },
+        "MODEL": {
+          "durationMs": 14155,
+          "wallMs": 14161,
+          "entities": [
+            {
+              "text": "Amelia Hartley",
+              "type": "PERSON",
+              "confidence": 0.9974,
+              "start": 51,
+              "end": 65,
+              "source": "LAYA"
+            },
+            {
+              "text": "2019",
+              "type": "OTHER",
+              "confidence": 0.9127,
+              "start": 117,
+              "end": 121,
+              "source": "LAYA"
+            },
+            {
+              "text": "Amelia",
+              "type": "PERSON",
+              "confidence": 0.9815,
+              "start": 131,
+              "end": 137,
+              "source": "LAYA"
+            },
+            {
+              "text": "j.whitfield@example.co.uk",
+              "type": "EMAIL",
+              "confidence": 0.9995,
+              "start": 234,
+              "end": 259,
+              "source": "LAYA"
+            },
+            {
+              "text": "+44 113 496 0587",
+              "type": "PHONE",
+              "confidence": 0.9997,
+              "start": 263,
+              "end": 279,
+              "source": "LAYA"
+            },
+            {
+              "text": "James Whitfield",
+              "type": "PERSON",
+              "confidence": 0.9987,
+              "start": 300,
+              "end": 315,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 5,
+            "fp": 1,
+            "fn": 0,
+            "predictions": 6,
+            "gold": 5,
+            "tp_pred": 5,
+            "typed_found": 5,
+            "typed_tp_pred": 5,
+            "gold_chars": 76,
+            "gold_chars_covered": 76,
+            "extra_chars": 4,
+            "fp_examples": [
+              {
+                "text": "2019",
+                "type": "OTHER"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "PERSON",
+              "EMAIL",
+              "PHONE",
+              "PERSON"
+            ],
+            "gold_types": [
+              "PERSON",
+              "PERSON",
+              "EMAIL",
+              "PHONE",
+              "PERSON"
+            ]
+          }
+        },
+        "HYBRID": {
+          "durationMs": 13295,
+          "wallMs": 13306,
+          "entities": [
+            {
+              "text": "Amelia Hartley",
+              "type": "PERSON",
+              "confidence": 0.9974,
+              "start": 51,
+              "end": 65,
+              "source": "LAYA"
+            },
+            {
+              "text": "2019",
+              "type": "OTHER",
+              "confidence": 0.9127,
+              "start": 117,
+              "end": 121,
+              "source": "LAYA"
+            },
+            {
+              "text": "Amelia",
+              "type": "PERSON",
+              "confidence": 0.9815,
+              "start": 131,
+              "end": 137,
+              "source": "LAYA"
+            },
+            {
+              "text": "j.whitfield@example.co.uk",
+              "type": "EMAIL",
+              "confidence": 0.999,
+              "start": 234,
+              "end": 259,
+              "source": "HYBRID"
+            },
+            {
+              "text": "+44 113 496 0587",
+              "type": "PHONE",
+              "confidence": 0.999,
+              "start": 263,
+              "end": 279,
+              "source": "HYBRID"
+            },
+            {
+              "text": "James Whitfield",
+              "type": "PERSON",
+              "confidence": 0.9987,
+              "start": 300,
+              "end": 315,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 5,
+            "fp": 1,
+            "fn": 0,
+            "predictions": 6,
+            "gold": 5,
+            "tp_pred": 5,
+            "typed_found": 5,
+            "typed_tp_pred": 5,
+            "gold_chars": 76,
+            "gold_chars_covered": 76,
+            "extra_chars": 4,
+            "fp_examples": [
+              {
+                "text": "2019",
+                "type": "OTHER"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "PERSON",
+              "EMAIL",
+              "PHONE",
+              "PERSON"
+            ],
+            "gold_types": [
+              "PERSON",
+              "PERSON",
+              "EMAIL",
+              "PHONE",
+              "PERSON"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "document": "13-payment-dispute.txt",
+      "characters": 293,
+      "gold": 5,
+      "methods": {
+        "REGEX": {
+          "durationMs": 4,
+          "wallMs": 16,
+          "entities": [
+            {
+              "text": "5555-5555-5555-4444",
+              "type": "CREDIT_CARD",
+              "confidence": 0.97,
+              "start": 118,
+              "end": 137,
+              "source": "REGEX"
+            },
+            {
+              "text": "FR14 2004 1010 0505 0001 3M02 606",
+              "type": "IBAN",
+              "confidence": 0.99,
+              "start": 154,
+              "end": 187,
+              "source": "REGEX"
+            },
+            {
+              "text": "robert.klein@example.fr",
+              "type": "EMAIL",
+              "confidence": 0.97,
+              "start": 197,
+              "end": 220,
+              "source": "REGEX"
+            },
+            {
+              "text": "+33 6 55 50 12 34",
+              "type": "PHONE",
+              "confidence": 0.92,
+              "start": 222,
+              "end": 239,
+              "source": "REGEX"
+            }
+          ],
+          "score": {
+            "tp": 4,
+            "fp": 0,
+            "fn": 1,
+            "predictions": 4,
+            "gold": 5,
+            "tp_pred": 4,
+            "typed_found": 4,
+            "typed_tp_pred": 4,
+            "gold_chars": 104,
+            "gold_chars_covered": 92,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [
+              {
+                "text": "Robert Klein",
+                "type": "PERSON"
+              }
+            ],
+            "found_types": [
+              "CREDIT_CARD",
+              "IBAN",
+              "EMAIL",
+              "PHONE"
+            ],
+            "gold_types": [
+              "PERSON",
+              "CREDIT_CARD",
+              "IBAN",
+              "EMAIL",
+              "PHONE"
+            ]
+          }
+        },
+        "MODEL": {
+          "durationMs": 23025,
+          "wallMs": 23036,
+          "entities": [
+            {
+              "text": "44310",
+              "type": "ADDRESS",
+              "confidence": 0.9301,
+              "start": 23,
+              "end": 28,
+              "source": "LAYA"
+            },
+            {
+              "text": "Robert Klein",
+              "type": "PERSON",
+              "confidence": 0.9912,
+              "start": 41,
+              "end": 53,
+              "source": "LAYA"
+            },
+            {
+              "text": "2 April 2025",
+              "type": "OTHER",
+              "confidence": 0.9927,
+              "start": 91,
+              "end": 103,
+              "source": "LAYA"
+            },
+            {
+              "text": "5555-5555-5555-4444",
+              "type": "ID_NUMBER",
+              "confidence": 0.9982,
+              "start": 118,
+              "end": 137,
+              "source": "LAYA"
+            },
+            {
+              "text": "14 2004 1010 0505 0001 3",
+              "type": "ID_NUMBER",
+              "confidence": 0.9993,
+              "start": 156,
+              "end": 180,
+              "source": "LAYA"
+            },
+            {
+              "text": "02 606",
+              "type": "ID_NUMBER",
+              "confidence": 0.9712,
+              "start": 181,
+              "end": 187,
+              "source": "LAYA"
+            },
+            {
+              "text": "robert.klein@example.fr",
+              "type": "EMAIL",
+              "confidence": 0.9989,
+              "start": 197,
+              "end": 220,
+              "source": "LAYA"
+            },
+            {
+              "text": "+33 6 55 50 12 34",
+              "type": "PHONE",
+              "confidence": 0.9998,
+              "start": 222,
+              "end": 239,
+              "source": "LAYA"
+            },
+            {
+              "text": "Galeries Nord",
+              "type": "LOCATION",
+              "confidence": 0.9361,
+              "start": 254,
+              "end": 267,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 5,
+            "fp": 3,
+            "fn": 0,
+            "predictions": 9,
+            "gold": 5,
+            "tp_pred": 6,
+            "typed_found": 3,
+            "typed_tp_pred": 3,
+            "gold_chars": 104,
+            "gold_chars_covered": 101,
+            "extra_chars": 30,
+            "fp_examples": [
+              {
+                "text": "44310",
+                "type": "ADDRESS"
+              },
+              {
+                "text": "2 April 2025",
+                "type": "OTHER"
+              },
+              {
+                "text": "Galeries Nord",
+                "type": "LOCATION"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "CREDIT_CARD",
+              "IBAN",
+              "EMAIL",
+              "PHONE"
+            ],
+            "gold_types": [
+              "PERSON",
+              "CREDIT_CARD",
+              "IBAN",
+              "EMAIL",
+              "PHONE"
+            ]
+          }
+        },
+        "HYBRID": {
+          "durationMs": 23672,
+          "wallMs": 23682,
+          "entities": [
+            {
+              "text": "44310",
+              "type": "ADDRESS",
+              "confidence": 0.9301,
+              "start": 23,
+              "end": 28,
+              "source": "LAYA"
+            },
+            {
+              "text": "Robert Klein",
+              "type": "PERSON",
+              "confidence": 0.9912,
+              "start": 41,
+              "end": 53,
+              "source": "LAYA"
+            },
+            {
+              "text": "2 April 2025",
+              "type": "OTHER",
+              "confidence": 0.9927,
+              "start": 91,
+              "end": 103,
+              "source": "LAYA"
+            },
+            {
+              "text": "5555-5555-5555-4444",
+              "type": "CREDIT_CARD",
+              "confidence": 0.97,
+              "start": 118,
+              "end": 137,
+              "source": "HYBRID"
+            },
+            {
+              "text": "FR14 2004 1010 0505 0001 3M02 606",
+              "type": "IBAN",
+              "confidence": 0.99,
+              "start": 154,
+              "end": 187,
+              "source": "HYBRID"
+            },
+            {
+              "text": "robert.klein@example.fr",
+              "type": "EMAIL",
+              "confidence": 0.999,
+              "start": 197,
+              "end": 220,
+              "source": "HYBRID"
+            },
+            {
+              "text": "+33 6 55 50 12 34",
+              "type": "PHONE",
+              "confidence": 0.999,
+              "start": 222,
+              "end": 239,
+              "source": "HYBRID"
+            },
+            {
+              "text": "Galeries Nord",
+              "type": "LOCATION",
+              "confidence": 0.9361,
+              "start": 254,
+              "end": 267,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 5,
+            "fp": 3,
+            "fn": 0,
+            "predictions": 8,
+            "gold": 5,
+            "tp_pred": 5,
+            "typed_found": 5,
+            "typed_tp_pred": 5,
+            "gold_chars": 104,
+            "gold_chars_covered": 104,
+            "extra_chars": 30,
+            "fp_examples": [
+              {
+                "text": "44310",
+                "type": "ADDRESS"
+              },
+              {
+                "text": "2 April 2025",
+                "type": "OTHER"
+              },
+              {
+                "text": "Galeries Nord",
+                "type": "LOCATION"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "CREDIT_CARD",
+              "IBAN",
+              "EMAIL",
+              "PHONE"
+            ],
+            "gold_types": [
+              "PERSON",
+              "CREDIT_CARD",
+              "IBAN",
+              "EMAIL",
+              "PHONE"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "document": "14-driver-record.txt",
+      "characters": 196,
+      "gold": 4,
+      "methods": {
+        "REGEX": {
+          "durationMs": 0,
+          "wallMs": 7,
+          "entities": [
+            {
+              "text": "07700 900 461",
+              "type": "PHONE",
+              "confidence": 0.85,
+              "start": 182,
+              "end": 195,
+              "source": "REGEX"
+            }
+          ],
+          "score": {
+            "tp": 1,
+            "fp": 0,
+            "fn": 3,
+            "predictions": 1,
+            "gold": 4,
+            "tp_pred": 1,
+            "typed_found": 1,
+            "typed_tp_pred": 1,
+            "gold_chars": 53,
+            "gold_chars_covered": 13,
+            "extra_chars": 0,
+            "fp_examples": [],
+            "fn_examples": [
+              {
+                "text": "Aisha Rahman",
+                "type": "PERSON"
+              },
+              {
+                "text": "RAHMA805236A99BJ",
+                "type": "ID_NUMBER"
+              },
+              {
+                "text": "Imran Rahman",
+                "type": "PERSON"
+              }
+            ],
+            "found_types": [
+              "PHONE"
+            ],
+            "gold_types": [
+              "PERSON",
+              "ID_NUMBER",
+              "PERSON",
+              "PHONE"
+            ]
+          }
+        },
+        "MODEL": {
+          "durationMs": 9801,
+          "wallMs": 9813,
+          "entities": [
+            {
+              "text": "Aisha Rahman",
+              "type": "PERSON",
+              "confidence": 0.9994,
+              "start": 29,
+              "end": 41,
+              "source": "LAYA"
+            },
+            {
+              "text": "RAHMA805236A99BJ",
+              "type": "ID_NUMBER",
+              "confidence": 0.9999,
+              "start": 66,
+              "end": 82,
+              "source": "LAYA"
+            },
+            {
+              "text": "2031",
+              "type": "OTHER",
+              "confidence": 0.7488,
+              "start": 103,
+              "end": 107,
+              "source": "LAYA"
+            },
+            {
+              "text": "12",
+              "type": "ADDRESS",
+              "confidence": 0.7455,
+              "start": 131,
+              "end": 133,
+              "source": "LAYA"
+            },
+            {
+              "text": "Leeds",
+              "type": "LOCATION",
+              "confidence": 0.998,
+              "start": 135,
+              "end": 140,
+              "source": "LAYA"
+            },
+            {
+              "text": "Imran Rahman",
+              "type": "PERSON",
+              "confidence": 0.9763,
+              "start": 168,
+              "end": 180,
+              "source": "LAYA"
+            },
+            {
+              "text": "07700 900 461",
+              "type": "PHONE",
+              "confidence": 0.9997,
+              "start": 182,
+              "end": 195,
+              "source": "LAYA"
+            }
+          ],
+          "score": {
+            "tp": 4,
+            "fp": 3,
+            "fn": 0,
+            "predictions": 7,
+            "gold": 4,
+            "tp_pred": 4,
+            "typed_found": 4,
+            "typed_tp_pred": 4,
+            "gold_chars": 53,
+            "gold_chars_covered": 53,
+            "extra_chars": 11,
+            "fp_examples": [
+              {
+                "text": "2031",
+                "type": "OTHER"
+              },
+              {
+                "text": "12",
+                "type": "ADDRESS"
+              },
+              {
+                "text": "Leeds",
+                "type": "LOCATION"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "ID_NUMBER",
+              "PERSON",
+              "PHONE"
+            ],
+            "gold_types": [
+              "PERSON",
+              "ID_NUMBER",
+              "PERSON",
+              "PHONE"
+            ]
+          }
+        },
+        "HYBRID": {
+          "durationMs": 9527,
+          "wallMs": 9536,
+          "entities": [
+            {
+              "text": "Aisha Rahman",
+              "type": "PERSON",
+              "confidence": 0.9994,
+              "start": 29,
+              "end": 41,
+              "source": "LAYA"
+            },
+            {
+              "text": "RAHMA805236A99BJ",
+              "type": "ID_NUMBER",
+              "confidence": 0.9999,
+              "start": 66,
+              "end": 82,
+              "source": "LAYA"
+            },
+            {
+              "text": "2031",
+              "type": "OTHER",
+              "confidence": 0.7488,
+              "start": 103,
+              "end": 107,
+              "source": "LAYA"
+            },
+            {
+              "text": "12",
+              "type": "ADDRESS",
+              "confidence": 0.7455,
+              "start": 131,
+              "end": 133,
+              "source": "LAYA"
+            },
+            {
+              "text": "Leeds",
+              "type": "LOCATION",
+              "confidence": 0.998,
+              "start": 135,
+              "end": 140,
+              "source": "LAYA"
+            },
+            {
+              "text": "Imran Rahman",
+              "type": "PERSON",
+              "confidence": 0.9763,
+              "start": 168,
+              "end": 180,
+              "source": "LAYA"
+            },
+            {
+              "text": "07700 900 461",
+              "type": "PHONE",
+              "confidence": 0.999,
+              "start": 182,
+              "end": 195,
+              "source": "HYBRID"
+            }
+          ],
+          "score": {
+            "tp": 4,
+            "fp": 3,
+            "fn": 0,
+            "predictions": 7,
+            "gold": 4,
+            "tp_pred": 4,
+            "typed_found": 4,
+            "typed_tp_pred": 4,
+            "gold_chars": 53,
+            "gold_chars_covered": 53,
+            "extra_chars": 11,
+            "fp_examples": [
+              {
+                "text": "2031",
+                "type": "OTHER"
+              },
+              {
+                "text": "12",
+                "type": "ADDRESS"
+              },
+              {
+                "text": "Leeds",
+                "type": "LOCATION"
+              }
+            ],
+            "fn_examples": [],
+            "found_types": [
+              "PERSON",
+              "ID_NUMBER",
+              "PERSON",
+              "PHONE"
+            ],
+            "gold_types": [
+              "PERSON",
+              "ID_NUMBER",
+              "PERSON",
+              "PHONE"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

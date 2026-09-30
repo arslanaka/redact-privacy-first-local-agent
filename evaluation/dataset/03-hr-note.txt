@@ -1,0 +1,7 @@
+HR note - confidential
+
+[[PERSON|Sofia Martens]] joined the Hamburg office on 1 March 2021 as a data analyst.
+Her tax identification number is [[ID_NUMBER|65 929 970 489]] and her passport number is [[ID_NUMBER|C01X00T47]].
+Salary payments go to [[IBAN|NL91 ABNA 0417 1643 00]].
+
+During the 2024 review her manager, [[PERSON|Thomas Brandt]], recommended a promotion.

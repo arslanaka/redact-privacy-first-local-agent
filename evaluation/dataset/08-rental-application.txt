@@ -1,0 +1,11 @@
+Rental application
+
+Applicant: [[PERSON|Mateo Alvarez Ruiz]]
+Date of birth: [[DATE_OF_BIRTH|1992-09-30]]
+Current address: [[ADDRESS|Calle de Alcala 45, 28014 Madrid]]
+Phone: [[PHONE|+34 612 555 019]]
+Email: [[EMAIL|mateo.alvarez@example.es]]
+Employer: Iberia Tech Solutions S.L.
+Monthly net income: 3,450 EUR
+
+References: [[PERSON|Lucia Moreno]] (previous landlord), [[PHONE|+34 699 555 230]]

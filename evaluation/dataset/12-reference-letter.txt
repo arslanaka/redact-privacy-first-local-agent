@@ -1,0 +1,10 @@
+To whom it may concern,
+
+I am pleased to recommend [[PERSON|Amelia Hartley]], who worked with me at Brightwater Consulting
+from 2019 to 2024. [[PERSON|Amelia]] led our client analytics practice and managed a team of six.
+
+Please feel free to contact me at [[EMAIL|j.whitfield@example.co.uk]] or [[PHONE|+44 113 496 0587]].
+
+Yours faithfully,
+[[PERSON|James Whitfield]]
+Director, Brightwater Consulting

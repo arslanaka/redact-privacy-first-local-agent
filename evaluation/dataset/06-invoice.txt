@@ -1,0 +1,10 @@
+INVOICE 2025-0314
+
+Supplier: Blue Harbor Analytics Ltd, 21 Dock Road, Liverpool L3 4AF
+Customer: Cedar & Stone Architects
+
+Invoice date: 12/03/2025      Due: 11/04/2025
+Consulting services, 18 hours at 120.00 EUR = 2,160.00 EUR
+
+Please pay to IBAN [[IBAN|GB29 NWBK 6016 1331 9268 19]] quoting the invoice number.
+Billing questions: [[EMAIL|billing@example.org]]

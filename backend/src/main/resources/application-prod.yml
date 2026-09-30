@@ -1,0 +1,26 @@
+# Hosted deployment (e.g. Railway private testing). Activate with SPRING_PROFILES_ACTIVE=prod.
+# The backend is reachable only from the frontend proxy on the private network.
+
+server:
+  # Dual-stack bind, so private networks that are IPv6-only (Railway) can reach the service.
+  address: ${SERVER_ADDRESS:::}
+
+privacy:
+  security:
+    internal-token: ${INTERNAL_API_TOKEN:}
+    require-internal-token: true
+  cors:
+    # The browser only talks to the frontend (same origin); nothing calls the backend cross-origin.
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:}
+  evaluation-enabled: ${PRIVACY_EVALUATION_ENABLED:false}
+
+management:
+  endpoint:
+    health:
+      show-details: never
+
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false

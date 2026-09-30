@@ -1,0 +1,12 @@
+Subject: Order 58214 not delivered
+
+Hello,
+
+I ordered a standing desk three weeks ago and it still has not arrived. The tracking page just says
+"in transit". My name is [[PERSON|Daniel Okafor]] and the order was placed with the email
+[[EMAIL|daniel.okafor@example.com]]. You can also call me on [[PHONE|+44 20 7946 0412]].
+
+The delivery address is [[ADDRESS|4 Canal Street, Manchester M1 3HE]].
+
+Thanks,
+[[PERSON|Daniel]]

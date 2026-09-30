@@ -1,0 +1,6 @@
+[09:14] agent_tom: Hi, how can I help today?
+[09:15] customer: hi, I cant log in. my username is the email [[EMAIL|lena.fischer92@example.com]]
+[09:15] agent_tom: Thanks. Can you confirm the card on file ends in 1111?
+[09:16] customer: the full number is [[CREDIT_CARD|4111 1111 1111 1111]] if that helps
+[09:16] agent_tom: Please never share full card numbers in chat. I have reset your password.
+[09:17] customer: ok thanks, my number is [[PHONE|0151 5550 8812]] if you need to call
